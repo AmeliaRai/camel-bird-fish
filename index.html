@@ -1,0 +1,2221 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>齐豫《骆驼·飞鸟·鱼》| 专辑主题页 · 歌词与乐评</title>
+<meta name="description" content="齐豫 1997 年专辑《骆驼·飞鸟·鱼》主题页：全曲目歌词与严肃乐评。以封面为基调的沉郁、诗性、人文阅读空间。">
+<meta name="theme-color" content="#efe4d2">
+<meta property="og:type" content="website">
+<meta property="og:title" content="齐豫《骆驼·飞鸟·鱼》| 专辑主题页">
+<meta property="og:description" content="十二首歌曲、歌词、乐评与专辑内页档案。">
+<meta property="og:image" content="assets/cover.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="齐豫《骆驼·飞鸟·鱼》| 专辑主题页">
+<meta name="twitter:description" content="十二首歌曲、歌词、乐评与专辑内页档案。">
+
+<!--
+  齐豫《骆驼·飞鸟·鱼》专辑主题页
+  · 设计基调取自专辑封面：暖褐纸感 #a68d72 / #ceb195，
+    深墨 #11150e / #1a1d16，红赭色头巾 #7d4029 / #9c5238
+  · 页面结构：cover → 序 / 曲目 / 逐曲歌词与乐评 / 专辑文本与附录
+  · 十二首歌词与十三篇乐评均已完成；乐评依据公开评论与专辑文案整理，
+    事实性信息已逐条核实（见乐评区「方法说明」）
+-->
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Noto+Serif+SC:wght@200;300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   0. 设计令牌（颜色取样自专辑封面）
+   ============================================================ */
+:root{
+  /* 纸面 · 封面天光 */
+  --paper:        #efe4d2;
+  --paper-2:      #e6d8c2;
+  --paper-3:      #dccbb2;
+  --paper-4:      #cdb897;
+  /* 墨色 · 封面上方「齊豫」与右下阴影 */
+  --ink:          #1a1d16;
+  --ink-2:        #2a2c21;
+  --ink-soft:     #4a4436;
+  --ink-mute:     #6b6252;
+  --ink-faint:    #8a7f6b;
+  /* 红赭 · 封面头巾 */
+  --ochre:        #8a4a30;
+  --ochre-2:      #a75a38;
+  --ochre-soft:   #b9836a;
+  --ochre-wash:   rgba(138,74,48,.10);
+  /* 金 · 封面手写体的暖调 */
+  --gilt:         #9a7b4f;
+  /* 线 */
+  --rule:         rgba(26,29,22,.14);
+  --rule-strong:  rgba(26,29,22,.30);
+  --rule-light:   rgba(239,228,210,.18);
+
+  /* 字体 */
+  --serif: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", "STSong",
+           "PingFang SC", "Microsoft YaHei", serif;
+  --latin: "Cormorant Garamond", "EB Garamond", Georgia, "Times New Roman", serif;
+  --sans:  "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", system-ui, sans-serif;
+
+  /* 尺度 */
+  --measure: 100%;          /* 散文块占满正文栏（原先 34/38/42em 比栏宽还窄，导致右侧留白） */
+  --measure-narrow: 36em;   /* 乐评、引文等短块的行宽上限 */
+  --page-max: 1360px;
+  --rail-w: clamp(288px, 22vw, 320px);   /* 目录栏宽度 */
+  --gap: clamp(28px, 4vw, 64px);
+}
+
+/* ============================================================
+   1. 重置与基底
+   ============================================================ */
+*,*::before,*::after{ box-sizing: border-box; }
+html{
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 96px;
+}
+body{
+  margin: 0;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 17px;
+  line-height: 2.05;
+  color: var(--ink-soft);
+  background-color: var(--paper);
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+/* 纸纹 + 天光：模拟封面的颗粒与光晕 */
+body::before{
+  content:"";
+  position: fixed; inset: 0; z-index: 0; pointer-events: none;
+  background:
+    radial-gradient(120% 78% at 26% -8%,  rgba(255,247,232,.85) 0%, rgba(255,247,232,0) 58%),
+    radial-gradient(96% 66% at 88% 4%,    rgba(196,160,116,.34) 0%, rgba(196,160,116,0) 62%),
+    radial-gradient(120% 90% at 50% 108%, rgba(20,22,16,.30) 0%, rgba(20,22,16,0) 66%),
+    linear-gradient(178deg, var(--paper) 0%, var(--paper-2) 46%, var(--paper-3) 100%);
+}
+body::after{
+  content:"";
+  position: fixed; inset: -50%; z-index: 1; pointer-events: none;
+  opacity: .30;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.82' numOctaves='3' stitchTiles='stitch'/><feColorMatrix type='saturate' values='0'/></filter><rect width='220' height='220' filter='url(%23n)' opacity='.55'/></svg>");
+  mix-blend-mode: multiply;
+}
+::selection{ background: var(--ochre); color: #f6ecda; }
+
+img{ max-width: 100%; display: block; }
+a{ color: inherit; text-decoration: none; }
+
+/* 阅读进度 */
+#progress{
+  position: fixed; top: 0; left: 0; height: 2px; width: 0;
+  background: linear-gradient(90deg, var(--ochre), var(--gilt));
+  z-index: 60; transition: width .12s linear;
+}
+.skip{
+  position: absolute; left: -9999px; top: 0; z-index: 99;
+  background: var(--ink); color: var(--paper); padding: .6em 1em;
+}
+.skip:focus{ left: 0; }
+
+/* ============================================================
+   2. 封面（Hero）—— 左侧原图 + 右侧信息栏
+   ============================================================ */
+.cover{
+  position: relative; z-index: 2;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: clamp(24px,4vw,56px) var(--gap) clamp(26px,3.4vw,48px);
+  display: grid;
+  grid-template-columns: minmax(0,1fr) minmax(0,.98fr);
+  gap: clamp(26px,3.4vw,48px);
+  align-items: start;
+  text-align: left;
+}
+.cover__art{ position: relative; align-self: start; }
+.cover__art img{
+  width: 100%; height: auto;
+  border-radius: 2px;
+  box-shadow:
+    0 1px 0 rgba(255,248,235,.5) inset,
+    0 30px 70px -28px rgba(14,16,11,.62),
+    0 4px 18px -6px rgba(14,16,11,.30);
+}
+
+/* 封面右侧的文字栏：整体左对齐，压缩纵向节奏 */
+.cover__meta{
+  max-width: none;
+  min-width: 0;
+  display: flex; flex-direction: column; align-items: stretch;
+  text-align: left;
+}
+.eyebrow{
+  font-family: var(--latin);
+  font-size: 11.5px; letter-spacing: .44em; text-transform: uppercase;
+  color: var(--ochre); margin: 0 0 .85em;
+  display: flex; flex-wrap: wrap; align-items: baseline; gap: .1em .75em;
+}
+.eyebrow .muted{ color: var(--ink-faint); letter-spacing: .3em; }
+
+/* 标题：始终单行；基准字号随视口连续变化，溢出时由脚本收紧字号 / 字距 */
+.title-line{
+  display: block; width: 100%; max-width: 100%;
+  font-size: clamp(24px, 4.35vw, 58px);
+  line-height: 1.18;
+  overflow: hidden;
+}
+.cover__title{
+  display: block;
+  margin: 0;
+  font-size: inherit; line-height: inherit;
+  font-weight: 300;
+  letter-spacing: .03em;
+  white-space: nowrap;
+  color: var(--ink);
+}
+.cover__title .dot{ color: var(--ochre-soft); padding: 0 .04em; }
+.cover__sub{
+  margin: .95em 0 0;
+  font-size: 14.5px; line-height: 1.95;
+  color: var(--ink-mute);
+  max-width: 40em;
+}
+.cover__rule{
+  width: 54px; height: 1px; margin: 1.25em 0;
+  background: var(--ochre); opacity: .55;
+}
+.facts{ margin: 0; display: grid; gap: .42em 1.2em; grid-template-columns: auto 1fr; font-size: 13.5px; line-height: 1.85; }
+.facts dt{
+  font-family: var(--latin); font-size: 11.5px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--ink-faint); padding-top: .45em;
+}
+.facts dd{ margin: 0; color: var(--ink-soft); }
+.facts dd .sep{ color: var(--ochre-soft); padding: 0 .5em; }
+.cover__quote{
+  margin: 1.35em 0 0; padding: .95em 0 0 1.15em;
+  border-left: 1px solid var(--ochre-soft);
+  font-size: 15px; line-height: 1.9; font-style: italic; color: var(--ink-soft);
+  max-width: 34em;
+}
+.cover__quote b{ font-weight: 400; font-style: normal; letter-spacing: .02em; }
+.cover__quote span{
+  display: block; margin-top: .45em;
+  font-family: var(--latin); font-size: 13px; letter-spacing: .16em;
+  color: var(--ochre); font-style: normal;
+}
+
+/* ============================================================
+   3. 主体骨架：侧栏目录 + 正文
+   ============================================================ */
+.shell{
+  position: relative; z-index: 2;
+  max-width: var(--page-max);
+  margin: 0 auto;
+  padding: 0 var(--gap) clamp(60px,9vw,130px);
+  display: grid;
+  /* 目录列固定宽度（由 --rail-w 控制），剩余宽度全部留给正文；
+     窄到放不下两栏歌词时折为单栏（目录转为横向条目） */
+  grid-template-columns: minmax(0,var(--rail-w)) minmax(0,1fr);
+  gap: clamp(28px,2.8vw,44px);
+  align-items: start;
+}
+.rail{
+  position: sticky; top: 40px;
+  padding-top: 6px;
+  border-top: 1px solid var(--rule-strong);
+}
+.rail__head{
+  font-family: var(--latin); font-size: 10.5px; letter-spacing: .34em;
+  text-transform: uppercase; color: var(--ink-faint);
+  margin: .7em 0 .9em;
+}
+.rail ol{ list-style: none; margin: 0; padding: 0; counter-reset: t; }
+.rail li{ counter-increment: t; }
+.rail a{
+  display: grid; grid-template-columns: 2.4em minmax(0,1fr); gap: .55em;
+  align-items: baseline;
+  padding: .3em 0 .3em .1em;
+  border-bottom: 1px solid transparent;
+  font-size: 16px; line-height: 1.7; color: var(--ink-mute);
+  transition: color .25s ease, padding-left .25s ease;
+}
+.rail a::before{
+  content: counter(t, decimal-leading-zero);
+  font-family: var(--latin); font-size: 12px; letter-spacing: .1em;
+  color: var(--ink-faint);
+  transition: color .25s ease;
+}
+.rail a:hover{ color: var(--ink); padding-left: .5em; }
+.rail a[aria-current="true"]{ color: var(--ochre); }
+.rail a[aria-current="true"]::before{ color: var(--ochre); }
+.rail__foot{
+  margin-top: 1.5em; padding-top: .9em;
+  border-top: 1px solid var(--rule);
+  font-size: 12px; line-height: 1.85; color: var(--ink-faint);
+}
+.rail__foot a{ border-bottom: 1px solid var(--rule-strong); }
+
+/* ============================================================
+   4. 章节与标题
+   ============================================================ */
+main{ min-width: 0; }
+.chapter{ padding-top: clamp(38px,5vw,64px); }
+.chapter:first-child{ padding-top: 6px; }
+.chapter__label{
+  display: flex; align-items: center; gap: 1em;
+  font-family: var(--latin); font-size: 11.5px; letter-spacing: .44em;
+  text-transform: uppercase; color: var(--ochre);
+  margin: 0 0 1.6em;
+}
+.chapter__label::after{
+  content:""; flex: 1 1 auto; height: 1px;
+  background: linear-gradient(90deg, var(--rule-strong), rgba(26,29,22,0));
+}
+h2{
+  margin: 0 0 .6em;
+  font-size: clamp(27px,3.2vw,40px); font-weight: 300; line-height: 1.45;
+  letter-spacing: .04em; color: var(--ink);
+}
+h3{ margin: 0; font-weight: 400; }
+p{ margin: 0 0 1.35em; }
+.prose{ max-width: var(--measure); }
+.prose--wide{ max-width: 40em; }
+.lead{
+  font-size: clamp(18px,1.6vw,21px); line-height: 2.05;
+  color: var(--ink); font-weight: 300;
+}
+.prose blockquote{
+  margin: 1.9em 0; padding: .1em 0 .1em 1.4em;
+  border-left: 1px solid var(--ochre-soft);
+  color: var(--ink-soft); font-size: 16px;
+}
+.dropcap::first-letter{
+  float: left;
+  font-size: 3.5em; line-height: .86;
+  padding: .06em .16em 0 0;
+  color: var(--ochre); font-weight: 400;
+}
+.small{ font-size: 13.5px; line-height: 2; color: var(--ink-faint); }
+.tbd{
+  color: var(--ink-faint);
+  border-bottom: 1px dotted var(--rule-strong);
+  font-size: .95em;
+}
+
+/* 唱片文案来源标注 */
+.source{
+  margin-top: 2.2em; padding-top: 1em;
+  border-top: 1px solid var(--rule);
+  font-size: 12.5px; color: var(--ink-faint); letter-spacing: .04em;
+}
+
+/* ============================================================
+   5. 曲目表
+   ============================================================ */
+.toc{ margin: 2.6em 0 0; padding: 0; list-style: none; border-top: 1px solid var(--rule-strong); }
+.toc li{ border-bottom: 1px solid var(--rule); }
+.toc a{
+  display: grid;
+  grid-template-columns: 3.4em minmax(0,1fr) auto;
+  align-items: baseline; gap: 1.2em;
+  padding: 1.05em .3em;
+  transition: background .3s ease, padding-left .3s ease;
+}
+.toc a:hover{ background: var(--ochre-wash); padding-left: .9em; }
+.toc .num{
+  font-family: var(--latin); font-size: 19px; color: var(--ochre-soft);
+  letter-spacing: .06em;
+}
+.toc .name{ font-size: clamp(18px,1.7vw,22px); color: var(--ink); letter-spacing: .03em; }
+.toc .name i{
+  display: block; margin-top: .2em;
+  font-family: var(--latin); font-style: normal; font-size: 12px;
+  letter-spacing: .26em; color: var(--ink-faint); text-transform: uppercase;
+}
+.toc .tag{
+  font-family: var(--latin); font-size: 11.5px; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--ochre); white-space: normal; line-height: 1.5;
+}
+.toc .tag:empty{ display: none; }
+.toc .tag--key{ color: var(--ochre); }
+
+/* ============================================================
+   6. 逐曲：歌词 + 乐评
+   ============================================================ */
+.track{
+  position: relative;
+  padding-top: clamp(52px,6vw,92px);
+  scroll-margin-top: 84px;
+}
+.track__head{
+  display: grid; grid-template-columns: auto minmax(0,1fr) auto;
+  align-items: end; gap: 1.3em;
+  padding-bottom: 1.15em;
+  border-bottom: 1px solid var(--rule-strong);
+}
+.track__no{
+  font-family: var(--latin); font-size: clamp(38px,4.4vw,58px);
+  line-height: .8; color: var(--ochre); opacity: .78; letter-spacing: .02em;
+}
+.track__titles h3{
+  font-size: clamp(25px,2.9vw,36px); font-weight: 400;
+  letter-spacing: .05em; color: var(--ink); line-height: 1.35;
+  display: flex; align-items: center; flex-wrap: wrap; gap: .65em;
+}
+.audio-toggle{
+  display: inline-flex; align-items: center; gap: .45em;
+  appearance: none; border: 1px solid var(--ochre-soft); border-radius: 999px;
+  padding: .42em .8em .42em .68em; background: rgba(255,251,243,.58);
+  color: var(--ochre); font: 400 11px/1 var(--sans); letter-spacing: .16em;
+  cursor: pointer; transition: background .25s ease, color .25s ease, transform .25s ease;
+}
+.audio-toggle::before{ content: "▶"; font-size: .78em; letter-spacing: 0; }
+.audio-toggle.is-playing{ background: var(--ochre); color: var(--paper); }
+.audio-toggle.is-playing::before{ content: "Ⅱ"; font-size: .7em; }
+.audio-toggle:hover{ background: var(--ochre-wash); transform: translateY(-1px); }
+.audio-toggle:focus-visible{ outline: 2px solid var(--ochre); outline-offset: 3px; }
+.audio-toggle[disabled]{ opacity: .45; cursor: not-allowed; }
+@media (max-width: 560px){
+  .track__titles h3{ gap: .45em; }
+  .audio-toggle{ padding: .48em .68em; font-size: 10px; letter-spacing: .1em; }
+}
+.noscript-note{
+  position: relative; z-index: 2; max-width: var(--page-max); margin: 0 auto;
+  padding: .65em var(--gap); border-top: 1px solid var(--rule);
+  color: var(--ink-mute); font-size: 13px;
+}
+.track__titles .en{
+  display: inline-block; margin: 0 0 .5em 1em;
+  font-family: var(--latin); font-size: 13.5px; letter-spacing: .26em;
+  text-transform: uppercase; color: var(--ink-faint);
+  white-space: nowrap;
+}
+.track__time{
+  font-family: var(--latin); font-size: 13px; letter-spacing: .18em;
+  color: var(--ink-faint);
+}
+.track__credits{
+  display: flex; flex-wrap: wrap; gap: .35em 1.5em;
+  margin: 1.15em 0 0; padding: 0; list-style: none;
+  font-size: 13px; color: var(--ink-mute);
+}
+.track__credits li{ display: flex; gap: .5em; align-items: baseline; }
+.track__credits b{
+  font-weight: 400; font-family: var(--latin); font-size: 11px;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ink-faint);
+}
+.track__body{
+  margin-top: clamp(26px,3vw,44px);
+  display: grid; gap: clamp(30px,4vw,56px);
+  /* 左右栏各自保底宽度；空间不够（含侧栏占位）时自动折成一栏 */
+  grid-template-columns: repeat(auto-fit, minmax(21.5em, 1fr));
+  align-items: start;
+}
+@media (max-width: 1000px){ .track__body{ grid-template-columns: minmax(0,1fr); } }
+
+/* ---- 歌词面板 ---- */
+.panel{ position: relative; }
+.panel__head{
+  display: flex; align-items: baseline; gap: .9em;
+  margin: 0 0 1.35em;
+  padding-bottom: .7em;
+  border-bottom: 1px solid var(--rule);
+}
+.panel__head h4{
+  margin: 0; font-size: 13px; font-weight: 400;
+  letter-spacing: .36em; color: var(--ink);
+  font-family: var(--serif);
+}
+.panel__head .en{
+  font-family: var(--latin); font-size: 11px; letter-spacing: .34em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+.panel__head .mark{
+  margin-left: auto; font-family: var(--latin); font-size: 10.5px;
+  letter-spacing: .22em; text-transform: uppercase; color: var(--ochre);
+  border: 1px solid var(--ochre-soft); border-radius: 999px;
+  padding: .18em .8em; opacity: .9; white-space: nowrap;
+}
+/* 歌词正文容器：直接替换内部占位内容即可 */
+.lyrics{
+  position: relative;
+  font-size: 17.5px; line-height: 2.25; color: var(--ink-soft);
+  letter-spacing: .02em;
+}
+.lyrics .verse{ margin: 0 0 1.5em; }
+.lyrics .verse--chorus{ color: var(--ink); }
+.lyrics .verse--bridge{
+  padding-left: 1.2em; border-left: 1px solid var(--ochre-soft);
+}
+/* 歌词里的「点睛句」（如结尾点题、单字起句）：字号与歌词一致，仅用色与字距区分 */
+.lyrics .note{
+  margin: 0 0 1.5em;
+  font-size: 17.5px; line-height: 2.25; letter-spacing: .06em;
+  color: var(--ochre);
+}
+/* 回响式的收尾句：同字号，靠颜色与字距拉出余韵 */
+.lyrics .verse--note{
+  color: var(--ochre);
+  letter-spacing: .1em;
+}
+/* ---- 乐评面板：刊物式排版 ---- */
+.review{ position: relative; }
+.review__body{
+  font-size: 16px; line-height: 2.15; color: var(--ink-soft);
+  /* 不设行宽上限：乐评栏本就窄于阅读上限，总论长评则占满正文栏，避免右侧留白 */
+}
+.review__body .note{
+  margin-top: 1.5em; padding-top: .9em;
+  border-top: 1px solid var(--rule);
+  font-size: 13.5px; line-height: 2; color: var(--ink-faint);
+  font-family: var(--sans);
+}
+.scan-note{
+  margin: 2em 0 0; padding-top: 1.1em; border-top: 1px solid var(--rule);
+}
+.scan-note__label{
+  display: flex; align-items: baseline; justify-content: space-between; gap: 1em;
+  margin-bottom: .75em; color: var(--ink-faint); font: 11px/1.4 var(--latin);
+  letter-spacing: .22em; text-transform: uppercase;
+}
+.scan-note__label span:first-child{ color: var(--ochre); }
+.scan-pages{ display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 10px; }
+.scan-pages a{ display: block; background: var(--paper-2); border: 1px solid var(--rule); padding: 5px; }
+.scan-pages img{ width: 100%; height: auto; display: block; filter: saturate(.8) sepia(.08); }
+.scan-pages a:hover{ border-color: var(--ochre-soft); }
+
+/* ---- 专辑图像档案 ---- */
+.visual-archive{ margin-top: clamp(64px,8vw,120px); }
+.visual-archive__intro{ max-width: var(--measure-narrow); color: var(--ink-mute); font-size: 15px; }
+.visual-archive__grid{ display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 18px; margin-top: 2.3em; }
+.visual-archive figure{ margin: 0; padding: 8px; background: rgba(255,251,243,.55); border: 1px solid var(--rule); }
+.visual-archive img{ width: 100%; height: 180px; object-fit: cover; display: block; filter: saturate(.78) sepia(.12); }
+.visual-archive figcaption{ padding: .75em .25em .25em; color: var(--ink-faint); font: 11px/1.5 var(--latin); letter-spacing: .14em; text-transform: uppercase; }
+/* 方法说明：乐评区顶部的一次性交代 */
+.method{
+  margin: 0 0 1.6em; padding: .95em 1.1em;
+  border-left: 2px solid var(--ochre-soft);
+  background: rgba(255,251,243,.5);
+  font-size: 13.5px; line-height: 2; color: var(--ink-mute);
+  max-width: var(--measure-narrow);
+}
+.method b{ color: var(--ochre); font-weight: 400; }
+/* 乐评小签：作曲/词作/编曲要点 */
+.stamp{
+  margin-top: 1.8em; padding: 1.05em 1.15em;
+  border: 1px solid var(--rule);
+  background: linear-gradient(180deg, rgba(255,251,243,.5), rgba(255,251,243,0));
+  font-size: 13px; line-height: 1.95; color: var(--ink-mute);
+}
+.stamp b{
+  display: block; font-weight: 400; margin-bottom: .35em;
+  font-family: var(--latin); font-size: 11px; letter-spacing: .3em;
+  text-transform: uppercase; color: var(--ochre);
+}
+/* 「金句 / 注解」横条 */
+.pull{
+  margin: 2.2em 0 0; padding: 1.5em 1.6em;
+  background: var(--ink); color: var(--paper-2);
+  border-radius: 2px;
+  box-shadow: 0 18px 40px -26px rgba(14,16,11,.7);
+}
+.pull q{
+  display: block; font-size: clamp(17px,1.8vw,21px); line-height: 1.95;
+  letter-spacing: .03em; quotes: none;
+}
+.pull q::before, .pull q::after{ content:""; }
+.pull cite{
+  display: block; margin-top: .9em;
+  font-family: var(--latin); font-style: normal; font-size: 11.5px;
+  letter-spacing: .3em; text-transform: uppercase; color: var(--ochre-soft);
+}
+
+/* 曲目之间的分隔符 */
+.divider{
+  display: flex; align-items: center; gap: 1.1em;
+  margin: clamp(56px,7vw,104px) 0 0;
+  color: var(--ochre-soft);
+}
+.divider::before, .divider::after{
+  content:""; flex: 1 1 auto; height: 1px; background: var(--rule-strong);
+}
+.divider span{
+  font-family: var(--latin); font-size: 11px; letter-spacing: .5em;
+  text-transform: uppercase; color: var(--ink-faint);
+}
+
+/* ============================================================
+   7. 附录：制作名单 / 奖项 / 主题索引
+   ============================================================ */
+.appendix{ margin-top: 1.5em; }
+.credits-grid{
+  display: grid; gap: 1.6em 2.4em;
+  grid-template-columns: minmax(0,1.55fr) minmax(190px,.8fr) minmax(230px,.9fr);
+  margin-top: 2.2em;
+}
+.credits-grid section{ border-top: 1px solid var(--rule-strong); padding-top: 1em; }
+.credits-grid h4{
+  margin: 0 0 .8em; font-size: 12px; font-weight: 400;
+  letter-spacing: .3em; color: var(--ochre);
+}
+.credits-grid ul{ margin: 0; padding: 0; list-style: none; font-size: 14.5px; line-height: 2; }
+.credits-grid li{ color: var(--ink-soft); }
+.credits-grid li b{ font-weight: 400; color: var(--ink); }
+@media (max-width: 900px){ .credits-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 560px){ .credits-grid{ grid-template-columns: minmax(0,1fr); } }
+
+.threads{ margin: 2.4em 0 0; padding: 0; list-style: none; }
+.threads li{
+  padding: 1.15em 0; border-bottom: 1px solid var(--rule);
+  display: grid; grid-template-columns: 12em minmax(0,1fr); gap: 1.2em;
+  font-size: 15px;
+}
+.threads b{ font-weight: 400; color: var(--ink); letter-spacing: .04em; }
+.threads span{ color: var(--ink-mute); font-size: 14.5px; }
+@media (max-width: 720px){ .threads li{ grid-template-columns: minmax(0,1fr); gap: .35em; } }
+
+/* ============================================================
+   8. 页脚
+   ============================================================ */
+.colophon{
+  position: relative; z-index: 2;
+  background: var(--ink); color: var(--paper-3);
+  padding: clamp(48px,6vw,86px) var(--gap) clamp(34px,4vw,54px);
+}
+.colophon__inner{
+  max-width: var(--page-max); margin: 0 auto;
+  display: grid; gap: clamp(28px,4vw,58px);
+  grid-template-columns: minmax(0,1.1fr) minmax(0,.9fr);
+  align-items: start;
+}
+@media (max-width: 860px){ .colophon__inner{ grid-template-columns: minmax(0,1fr); } }
+.colophon h2{ color: var(--paper); font-size: clamp(24px,2.6vw,32px); }
+.colophon p{ color: rgba(239,228,210,.74); font-size: 15px; max-width: 34em; }
+.colophon .sign{
+  font-family: var(--latin); font-size: 13px; letter-spacing: .34em;
+  text-transform: uppercase; color: var(--ochre-soft);
+}
+.colophon ul{ margin: 0; padding: 0; list-style: none; font-size: 14px; line-height: 2.1; }
+.colophon ul b{ font-weight: 400; color: var(--paper-2); }
+.colophon li{ color: rgba(239,228,210,.62); }
+.colophon .top{
+  display: inline-block; margin-top: 2em;
+  border-bottom: 1px solid var(--ochre-soft); padding-bottom: .2em;
+  font-size: 13.5px; color: var(--paper-2); letter-spacing: .1em;
+}
+
+/* ============================================================
+   9. 响应式
+   ============================================================ */
+@media (max-width: 1080px){
+  /* 窄屏下目录不再固定成列，改为横向铺开的条目；正文回到整幅宽度 */
+  .shell{ grid-template-columns: minmax(0,1fr); gap: 0; }
+  .rail{
+    position: static; padding: .9em 0 .2em; margin-bottom: .6em;
+  }
+  .rail ol{ display: grid; grid-template-columns: repeat(auto-fill, minmax(168px,1fr)); gap: 0 1.4em; }
+  .rail a{ border-bottom: 1px solid var(--rule); padding: .3em 0 .3em .1em; }
+  .rail__foot{
+    display: flex; flex-wrap: wrap; align-items: baseline; gap: .2em 1.4em;
+    margin-top: .9em; padding-top: .7em;
+  }
+}
+@media (max-width: 900px){
+  .cover{ grid-template-columns: minmax(0,1fr); gap: 26px; }
+  .cover__meta{ max-width: none; }
+  /* 单列：可用宽度变大，但视口在变窄，基准字号继续平滑下调 */
+  .title-line{ font-size: clamp(24px, 5.1vw, 46px); }
+}
+@media (max-width: 560px){
+  body{ font-size: 16px; line-height: 1.98; }
+  .track__head{ grid-template-columns: auto minmax(0,1fr); }
+  .track__time{ grid-column: 2; }
+  .toc a{ grid-template-columns: 2.8em minmax(0,1fr); }
+  .toc .tag{ grid-column: 2; }
+  .toc .tag{ letter-spacing: .1em; }
+  .panel__head{ flex-wrap: wrap; }
+  .panel__head .mark{ margin-left: 0; }
+  .title-line{ font-size: clamp(22px, 4.3vw, 24px); }
+  .cover{ padding-left: 20px; padding-right: 20px; }
+  .eyebrow{ letter-spacing: .32em; }
+}
+
+/* 打印：去掉装饰，留文字 */
+@media print{
+  body::before, body::after, .rail, #progress, .colophon .top{ display: none !important; }
+  body{ background: #fff; color: #000; font-size: 11pt; }
+  .cover, .shell{ max-width: none; padding: 0; }
+  .track{ page-break-inside: avoid; }
+  .pull{ background: none; color: #000; border-left: 2px solid #000; padding-left: 1em; }
+}
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+  *{ transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">跳到正文</a>
+<noscript><p class="noscript-note">本页的试听按钮与内页图像需要开启 JavaScript；歌词、乐评和专辑资料仍可直接阅读。</p></noscript>
+<div id="progress" aria-hidden="true"></div>
+
+<!-- A. 封面区：左侧原图 + 右侧专辑信息（整体左对齐） -->
+<header class="cover" id="top">
+  <div class="cover__art">
+    <img src="assets/cover.jpg"
+         alt="齐豫《骆驼·飞鸟·鱼》专辑封面：侧头仰望的女子，头戴红赭色头巾，暖褐色调"
+         width="1400" height="1400">
+  </div>
+
+  <div class="cover__meta">
+    <p class="eyebrow"><span>Album · 1997</span><span class="muted">Camel · Bird · Fish</span></p>
+    <div class="title-line">
+      <h1 class="cover__title" id="album-title">骆驼<span class="dot">·</span>飞鸟<span class="dot">·</span>鱼</h1>
+    </div>
+    <p class="cover__sub">
+      一张悉心打造三年的专辑。在齐豫转向佛乐之前，它为她的流行音乐生涯竖起丰碑，
+      也让她赢得第九届金曲奖最佳国语女演唱人奖。
+    </p>
+    <div class="cover__rule" aria-hidden="true"></div>
+    <dl class="facts">
+      <dt>Artist</dt>
+      <dd>齐豫 Chyi Yu</dd>
+      <dt>Released</dt>
+      <dd>1997 <span class="sep">/</span> 12 首</dd>
+      <dt>Honour</dt>
+      <dd>第 9 届金曲奖 · 最佳国语女演唱人奖</dd>
+      <dt>Lyrics</dt>
+      <dd>李格弟 <span class="sep">·</span> 许常德 <span class="sep">·</span> Albert Leung <span class="sep">·</span> 齐豫</dd>
+      <dt>Music</dt>
+      <dd>李泰祥 <span class="sep">·</span> 郭子 <span class="sep">·</span> 涂惠元 <span class="sep">·</span> 伍佰 <span class="sep">·</span> 黄舒骏</dd>
+    </dl>
+
+    <blockquote class="cover__quote">
+      <b>Always together, forever apart.</b>
+      总在一起，永远分离——飞鸟与鱼之间短暂相守、又终究擦身而过的无能为力。
+      <span>齐豫 词</span>
+    </blockquote>
+  </div>
+</header>
+
+<!-- B. 骨架：侧栏目录 + 正文 -->
+<div class="shell">
+
+  <!-- 侧栏：曲目导航 -->
+  <nav class="rail" aria-label="曲目导航">
+    <p class="rail__head">Contents</p>
+    <ol>
+      <li><a href="#album">专辑</a></li>
+      <li><a href="#track-01">飞鸟与鱼</a></li>
+      <li><a href="#track-02">觉（遥寄林觉民）</a></li>
+      <li><a href="#track-03">有没有</a></li>
+      <li><a href="#track-04">既然你问起</a></li>
+      <li><a href="#track-05">女人与小孩 I</a></li>
+      <li><a href="#track-06">话题</a></li>
+      <li><a href="#track-07">哭泣的骆驼</a></li>
+      <li><a href="#track-08">幸福</a></li>
+      <li><a href="#track-09">懒洋洋</a></li>
+      <li><a href="#track-10">四十个无亲无故的年头</a></li>
+      <li><a href="#track-11">叹息瓶</a></li>
+      <li><a href="#track-12">女人与小孩 II</a></li>
+      <li><a href="#visual-archive">专辑图像档案</a></li>
+      <li><a href="#appendix">附录 · 制作与文本</a></li>
+    </ol>
+    <p class="rail__foot">
+      目录含 12 首曲目、图像档案与附录，点击跳转。<br>
+      <a href="#appendix">直达制作名单</a>
+    </p>
+  </nav>
+
+  <!-- 正文 -->
+  <main id="main">
+
+    <!-- 序：专辑总论 -->
+    <section class="chapter" id="album" aria-labelledby="album-h">
+      <p class="chapter__label">Album Notes</p>
+      <h2 id="album-h">一张向内探求的唱片</h2>
+      <div class="prose">
+        <p class="lead dropcap">
+          身为李泰祥的得意弟子，齐豫继承了恩师实验性的音乐风格，凭高亢的天籁之音、
+          独特的人文情怀与空灵的古典仙气在华语乐坛独树一帜。
+        </p>
+        <p>
+          1988 年，由其弟齐秦牵头，改走「亲民」歌路的齐豫，发行了平衡摇滚与抒情的首张全创作中文专辑
+          《有没有这种说法》；而她的下一张原创中文专辑《骆驼·飞鸟·鱼》，则直到 1997 年才终于面世。
+          在她选择投身佛教音乐创作与表演之前，这张唱片为她的流行音乐生涯竖起了丰碑，
+          也是助她荣膺第 9 届金曲奖「最佳国语女演唱人奖」的杰作。
+        </p>
+        <p>
+          悉心打造 3 年之久的《骆驼·飞鸟·鱼》，集结了李泰祥、涂惠元、郭子、许常德、伍佰、李格弟、
+          Albert Leung、黄舒骏、江建民等一众优秀创作者，齐豫亦亲自下场为包括主打歌《飞鸟与鱼》在内的五首歌填词。
+          她笔下一句简洁的英文歌词「Always together, forever apart」（总在一起，永远分离），
+          道出了飞鸟与鱼之间短暂相守又最终擦身而过的无能为力，极具哲学意境。
+          而诗人李格弟也交出《叹息瓶》《既然你问起》等数首词作，配以齐豫飘渺的吟唱，
+          为专辑披上一层诗性的面纱。
+        </p>
+        <p>
+          极具人文底蕴的词作，亦托出专辑严肃、超越的底色，专辑向内探求的命题也随之浮现：
+          从细微的个人情感、爱恋纠缠，到有关存在的思辨、生命奥义的洞察，皆举重若轻被融入歌中。
+          而其中有关女性存在的叙事与表达尤为动人——《觉（遥寄林觉民）》以林觉民的《与妻书》为灵感，
+          以其妻陈意映的口吻回信，揭开殉道与大义背后具体的牺牲；《女人与小孩 II》唤来女儿李洁一同合唱，
+          真诚讲述母女之间两个生命彼此独立又互相联结的关系。
+        </p>
+        <p>
+          但这张专辑的气质并不局限于严肃。除了齐豫招牌的艺术流行歌曲，
+          抖落时尚说唱元素的《幸福》，前半段旷远、后半段灵动的《懒洋洋》，
+          都让专辑增添了几分时髦轻松的听感。
+        </p>
+      </div>
+
+      <p class="source">专辑介绍文字整理自 Apple Music 专辑页，本页仅作阅读排版之用。</p>
+
+      <!-- 曲目表 -->
+      <h2 id="toc-h" style="margin-top:2.4em">曲目</h2>
+      <ol class="toc" aria-labelledby="toc-h">
+        <li><a href="#track-01"><span class="num">01</span><span class="name">飞鸟与鱼<i>Fish &amp; Bird</i></span><span class="tag tag--key">always together/forever apart</span></a></li>
+        <li><a href="#track-02"><span class="num">02</span><span class="name">觉（遥寄林觉民）<i>To Jueh with Love</i></span><span class="tag tag--key">《与妻书》回信</span></a></li>
+        <li><a href="#track-03"><span class="num">03</span><span class="name">有没有<i>To Have &amp; Have Not</i></span><span class="tag">有与无之间</span></a></li>
+        <li><a href="#track-04"><span class="num">04</span><span class="name">既然你问起<i>Since You Ask</i></span><span class="tag">一个开始</span></a></li>
+        <li><a href="#track-05"><span class="num">05</span><span class="name">女人与小孩 I<i>Woman &amp; the Child I</i></span><span class="tag">母亲独白</span></a></li>
+        <li><a href="#track-06"><span class="num">06</span><span class="name">话题<i>Love’s Silence</i></span><span class="tag">沉默的关系</span></a></li>
+        <li><a href="#track-07"><span class="num">07</span><span class="name">哭泣的骆驼<i>Tearless Weeping</i></span><span class="tag tag--key">三联意象 · 驼</span></a></li>
+        <li><a href="#track-08"><span class="num">08</span><span class="name">幸福<i>Bliss</i></span><span class="tag">没有答案的诘问</span></a></li>
+        <li><a href="#track-09"><span class="num">09</span><span class="name">懒洋洋<i>Lazy Love</i></span><span class="tag">倦怠</span></a></li>
+        <li><a href="#track-10"><span class="num">10</span><span class="name">四十个无亲无故的年头<i>Forty Lone Years</i></span><span class="tag">几近一生的画面变白变红</span></a></li>
+        <li><a href="#track-11"><span class="num">11</span><span class="name">叹息瓶<i>Bottle of Sighs</i></span><span class="tag">起伏的叹息</span></a></li>
+        <li><a href="#track-12"><span class="num">12</span><span class="name">女人与小孩 II<i>Woman &amp; the Child II</i></span><span class="tag tag--key">母女合唱</span></a></li>
+      </ol>
+    </section>
+
+    <!--
+      C. 逐曲：每首含「歌词」与「乐评」两个面板
+    -->
+
+    <!-- 01 飞鸟与鱼 -->
+    <article class="track" id="track-01" aria-labelledby="t01-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">01</span>
+        <div class="track__titles">
+          <h3 id="t01-h">飞鸟与鱼</h3>
+          <span class="en">Fish &amp; Bird</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词 · 制作</b>齐豫</li>
+        <li><b>作曲 · 和声</b>齐秦</li>
+        <li><b>编曲</b>涂惠元</li>
+      </ul>
+      <div class="track__body">
+
+        <!-- 歌词面板 -->
+        <section class="panel" aria-labelledby="t01-l">
+          <div class="panel__head">
+            <h4 id="t01-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="01">
+            <p class="verse">
+              我是鱼　你是飞鸟<br>
+              要不是你一次失速流离<br>
+              要不是我一次张望观注<br>
+              哪来这一场不被看好的眷与恋
+            </p>
+            <p class="verse">
+              你勇敢　我宿命<br>
+              你是一只可以四处栖息的鸟<br>
+              我是一尾早已没了体温的鱼<br>
+              蓝的天　蓝的海<br>
+              难为了　难为了我和你
+            </p>
+            <p class="verse verse--bridge">
+              什么天地啊<br>
+              四季啊　昼夜啊<br>
+              什么海天一色<br>
+              地狱天堂　暮鼓晨钟
+            </p>
+            <p class="verse verse--chorus">
+              Always together forever apart<br>
+              Always together forever apart
+            </p>
+            <p class="verse verse--bridge">
+              什么天地啊<br>
+              四季啊　昼夜啊<br>
+              什么海天一色<br>
+              地狱天堂　暮鼓晨钟
+            </p>
+            <p class="verse verse--chorus">
+              Always together forever apart<br>
+              Always together forever apart
+            </p>
+            <p class="verse">
+              睡不着的夜<br>
+              醒不来的早晨<br>
+              春天的花如何得知秋天的果<br>
+              今天的不堪如何原谅昨日的昏盲
+            </p>
+            <p class="verse verse--bridge">
+              飞鸟如何去爱<br>
+              怎么会爱上水里的鱼
+            </p>
+            <p class="verse">飞鸟和鱼</p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <!-- 乐评面板 -->
+        <section class="review" aria-labelledby="t01-r">
+          <div class="panel__head">
+            <h4 id="t01-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="01">
+            <p>这首歌的灵感来自一部电影：片中男主角白天是人、夜晚化身为狼，女主角夜晚是人、白天则变成老鹰，相爱的两个人始终无法在同一时空相见。这个故事触动了齐豫，促成她把自己对爱情的感悟写成了这首词。</p>
+            <p>齐豫对飞鸟与鱼的爱情始终抱着悲观的看法。在她看来，海天一色、春夏秋冬相连、昼夜交替、天堂与地狱相对，看似彼此关联的世界，终究难以相容——正如飞鸟与鱼可以相恋，却找不到共同筑巢的地方。而正因为无法相守，爱情反而显得格外炽烈；这也让她想起李宗盛那句「相爱容易相处难」。</p>
+            <p>音乐上，这首歌的配器以简单的吉他和弦为主，电子乐器做出的效果声贯穿其中，间奏与高潮部分充分运用了背景和声——这是全专辑在编配上最难挑出毛病的一首。而它之所以站得住，是因为舒缓忧伤的旋律、齐豫本人的词与她的演唱三者恰好契合。</p>
+            <p>唱到高处，她不需要嘶吼也能穿透人心。此时的齐豫唱腔比早年更成熟细腻，歌声里多了岁月沉淀后的通透与释然，用空灵悠远的嗓音把「相爱却无法相守」的遗憾娓娓道来。这首歌的下沉感可以用一个意象来说明：飞鸟属于天空，鱼归于大海，即使彼此相爱，飞鸟不会为鱼放弃飞翔的自由，而鱼只能拖着冰冷的身体与早已破碎的心沉入深海。</p>
+            <p>一个容易被忽略的注脚：齐豫凭这首词入围了第九届金曲奖最佳作词人奖。歌手写词而入围作词奖项并不常见，这首歌的文字分量由此可见。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词、制作齐豫，作曲、和声齐秦，编曲涂惠元，时长 4 分 37 秒。英文句「Always together, forever apart」正是这首词的核心，也正是齐豫凭以入围第九届金曲奖最佳作词人奖的作品。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>II</span></div>
+
+    <!-- 02 觉（遥寄林觉民） -->
+    <article class="track" id="track-02" aria-labelledby="t02-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">02</span>
+        <div class="track__titles">
+          <h3 id="t02-h">觉（遥寄林觉民）</h3>
+          <span class="en">To Jueh with Love</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>齐豫 · 许常德</li>
+        <li><b>作曲</b>郭子</li>
+        <li><b>编曲</b>陈爱珍 · 周国仪</li>
+        <li><b>灵感</b>林觉民《与妻书》，以陈意映口吻作复</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t02-l">
+          <div class="panel__head">
+            <h4 id="t02-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="02">
+            <p class="verse">觉</p>
+            <p class="verse">
+              当我看见你的信<br>
+              我竟然相信<br>
+              刹那即永恒
+            </p>
+            <p class="verse verse--bridge">
+              再多的难舍和舍得<br>
+              有时候不得不舍
+            </p>
+            <p class="verse">觉</p>
+            <p class="verse">
+              当我回首我的梦<br>
+              我不得不相信<br>
+              刹那即永恒
+            </p>
+            <p class="verse verse--bridge">
+              再难的追寻和遗弃<br>
+              有时候不得不弃
+            </p>
+            <p class="verse verse--chorus">
+              爱不在开始<br>
+              却只能停在开始<br>
+              把缱绻了一时<br>
+              当作被爱了一世
+            </p>
+            <p class="verse verse--chorus">
+              你的不得不舍和遗弃都是守真情的坚持<br>
+              我留守着数不完的夜和载沉载浮的凌迟<br>
+              谁给你选择的权利　让你就这样的离去<br>
+              谁把我无止境的付出都化成纸上的<br>
+              一个名字
+            </p>
+            <p class="verse">如今</p>
+            <p class="verse">
+              当我寂寞那么真<br>
+              我还是得相信<br>
+              刹那能永恒
+            </p>
+            <p class="verse verse--bridge">
+              再苦的甜蜜和道理<br>
+              有时候不得不理
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t02-r">
+          <div class="panel__head">
+            <h4 id="t02-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="02">
+            <p>这首歌是齐豫依据林觉民的《与妻书》写给陈意映的回应。它恨千秋道义夺走爱人，却不记得意映寒夜的孤苦伶仃——与以往的齐豫大不相同，一样的只是「很干净，很干净」。</p>
+            <p>1997 年的齐豫 40 岁，已经成为母亲，也经历过婚姻的起落。这些阅历也许足够让她去理解生活加诸在另一个女人身上的苦——黄花岗烈士林觉民的遗孀，陈意映。</p>
+            <p>关于这首歌最动人的一段读解，来自一位听者从少年到中年的变化：高中时读《与妻书》，觉得英雄就义前以泪珠和笔墨写下的遗书催人泪下，甚至觉得嫁给这样的义士是幸运的；「这想法实在是少不经事，也害人不浅」。因为历史说到底是男人的故事，那个男人光明正大地赴死而永垂不朽，问题却是：谁给你选择离去的权利？此后所有世俗的、生活的负担，全部成了女人的事情。</p>
+            <p>这首歌的力量正在这里：活着的人背负着逝者的使命沉重前行，而没有人听到过她的声音——她年轻早逝的生命、她失去爱人的痛楚，在历史的叙述里都不重要。她只是英雄表达柔情的凭证，她那无止境的付出，仅仅成了一句「意映卿卿如晤」。因此《觉》是一个女人在历经落花流水春去也之后，对另一个女人最真挚的悲悯——有些阅历的人，才能从这封信里听出陈意映的沉重叹息。</p>
+            <p>配器上，这首歌以钢琴为主、弦乐为辅；而齐豫在其中表达的是对爱情的一个信念，即坚持。因为她对生活的纯洁理解，她的歌散发出一种独特的感染力，听者很自然地就相信并融入了她的信念与情感。</p>
+            <p>也有一个诚实的保留值得作为注脚留下：创作本身又是十分无力的，那些音符和文字说到底也不能表达痛苦的万分之一。这句话比任何赞美都更接近这首歌的分寸。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            「遥寄」是写给收信人的：这首歌以陈意映的口吻回信林觉民的《与妻书》。词的署名是齐豫与许常德，曲郭子，编曲陈爱珍与周国仪。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>III</span></div>
+
+    <!-- 03 有没有 -->
+    <article class="track" id="track-03" aria-labelledby="t03-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">03</span>
+        <div class="track__titles">
+          <h3 id="t03-h">有没有</h3>
+          <span class="en">To Have &amp; Have Not</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词 · 作曲 · 制作</b>齐豫</li>
+        <li><b>编曲</b>涂惠元</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t03-l">
+          <div class="panel__head">
+            <h4 id="t03-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="03">
+            <p class="verse verse--bridge">
+              没有爱就没有痛<br>
+              没有痛就无所谓在乎不在乎<br>
+              没有情就没有义<br>
+              没有义就无所谓牺牲不牺牲<br>
+              流不出眼泪就没有倚赖<br>
+              没有了依赖就无所谓<br>
+              爱不爱
+            </p>
+            <p class="verse verse--bridge">
+              没有风就没有浪<br>
+              没有浪就无所谓起伏不起伏<br>
+              没有花就没有果<br>
+              没有果就无所谓奉献不奉献<br>
+              梦碎了就画不出将来<br>
+              没有将来就无所谓<br>
+              风浪不风浪<br>
+              风浪不风浪
+            </p>
+            <p class="verse verse--bridge">
+              没有眼睛就没有颜色<br>
+              没有颜色就无所谓干净不干净<br>
+              没有耳朵就没有声音<br>
+              没有声音就无所谓中听不中听<br>
+              死了心　就没有感觉<br>
+              没有了感觉就无所谓<br>
+              看不看<br>
+              看不看
+            </p>
+            <p class="verse verse--chorus">
+              没有要求<br>
+              没有没有<br>
+              没有没有就无所谓
+            </p>
+            <p class="verse">有没有</p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t03-r">
+          <div class="panel__head">
+            <h4 id="t03-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="03">
+            <p>这首歌的句法就是它的主题。整首词是一道用归谬法写的证明题：「没有爱就没有痛／没有痛就无所谓在乎不在乎」——每一层推论都在抽掉一样东西，直到最后什么都不剩，从而证明那个追问本身已经没有立足点。</p>
+            <p>三段的递进是有设计的。第一段抽掉的是爱的层面（爱、情、义、眼泪、倚赖），第二段是变化的层面（风浪、花果、将来），第三段抽到了感官（颜色、声音），直至「死了心」。到最后一段，句子已经短到只剩「看不看」两个字——词在这里被自己侵蚀掉了，形式本身就是内容。</p>
+            <p>结尾更能说明问题：「没有要求／没有没有／没有没有就无所谓／有没有」。「有没有」三个字退回成一个孤立的疑问词，而它前面所有的推论都已经取消了发问的资格。这是全专辑里最冷的一首歌，冷到近乎无情——而它出自齐豫自己的手，不是词人代笔。</p>
+            <p>它也是全专辑唯一一首用「论证」代替抒情来谈感情的歌。就文本而言，它是一道门：走过它，专辑才允许自己进入《既然你问起》那样具体的私人情感。英文歌名定为「To Have &amp; Have Not」也值得一提——在英语里这是一对固定的说法，指「有产者」与「无产者」；用它来对译「有没有」，等于把一个关于爱的问题悄悄摆进了「拥有与一无所有」的框架里。</p>
+            <p class="note">【说明】公开评论对本曲只有一句概述：它「曲子动感」，歌词则有着彻底的辩证意味，许多地方很有哲理。除此之外没有关于编曲与人声处理的可靠材料，所以本篇只谈歌词，不对音乐作描述——这是资料的限制，不是取舍。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词、作曲、制作都是齐豫自己。英文歌名「To Have &amp; Have Not」在英语里是一对固定说法，指「有产者」与「无产者」，与中文的「有没有」互为映照。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>IV</span></div>
+
+    <!-- 04 既然你问起 -->
+    <article class="track" id="track-04" aria-labelledby="t04-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">04</span>
+        <div class="track__titles">
+          <h3 id="t04-h">既然你问起</h3>
+          <span class="en">Since You Ask</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>李格弟</li>
+        <li><b>作曲</b>李泰祥</li>
+        <li><b>编曲</b>李奕青</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t04-l">
+          <div class="panel__head">
+            <h4 id="t04-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="04">
+            <p class="verse">
+              既然你问起　我那绝望的恋<br>
+              那个摆荡的人和我被旋转的晕眩
+            </p>
+            <p class="verse">
+              既然你问起　我那黑暗的恋<br>
+              那睡不着的睡不着的睡不着的晚上<br>
+              和愈来愈亮的月光<br>
+              和愈来愈亮的月光
+            </p>
+            <p class="verse verse--bridge">
+              深情的疏离<br>
+              恐怖的甜蜜<br>
+              低垂的眼睛<br>
+              倾斜的心境
+            </p>
+            <p class="verse verse--bridge">
+              深情的疏离<br>
+              恐怖的甜蜜<br>
+              低垂的眼睛<br>
+              倾斜的心境
+            </p>
+            <p class="verse">
+              既然你问起　我那唯一的恋
+            </p>
+            <p class="verse verse--chorus">
+              温柔也是一种暴力<br>
+              它让人还也还不起
+            </p>
+            <p class="verse">
+              既然你问起　我那遗憾的恋
+            </p>
+            <p class="verse verse--bridge">
+              令人不齿的是<br>
+              一切还只是开始
+            </p>
+            <p class="verse verse--note">
+              竟然　还只是一个开始
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t04-r">
+          <div class="panel__head">
+            <h4 id="t04-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="04">
+            <p>这是整张专辑里最难的一首，也是被谈论得最细的一首。一句话概括它的分量：这张专辑已经够晦涩难懂了，而这首是晦中晦。</p>
+            <p>它同时是这张专辑家族结构的一个样本：作曲李泰祥，编曲李奕青——李奕青是李泰祥的长子。一首由李格弟写词、父子二人分工作曲与编曲的歌，在曲式上也最不守规矩。</p>
+            <p>旋律上的听感集中在「无调性」三个字：几乎无调性的旋律，不安而盘旋的心境；和弦一直走在主音边上，属七和弦来回游走，轻飘异常。</p>
+            <p>结构上，这首歌没有主歌副歌这类传统划分，编曲完全跟着歌词走，被分成三段，而每一段单独听的时候，很难想象它们可以拼成一首歌。这种写法让人想起李泰祥的另一首作品《今世》——把这种水平放到流行乐坛，是降维打击。</p>
+            <p>全曲的落点在最后一段：齐豫的声音竟然和弦乐的声音完美融合在一起，让人分不清究竟是人声还是乐声；和声的编排也已经越出常规，带着一点人声实验的意味。</p>
+            <p>其余几处听感同样值得记下：这首歌有点阴郁，那个和声尤其如此；它把人在极致痛苦时内心孤独、纠结、不甘的挣扎全都表现了出来，很有画面感；最形象的一个比喻是——像一条鱼被裹挟在漩涡中越转越快，最后被撒开，漂远了。</p>
+            <p>最能说明实际效果的，是一位听者的回忆：一个暑热的夜晚，戴着耳机听这张专辑睡着了，半夜放到这首时被冻醒——「当时的体感真的是冻醒的。看着那时窗外冷冷的月光，通体寒意。」关于「绝望」的写作，最有效的证明是它真的让人发冷。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作曲李泰祥、编曲李奕青是父子二人；李奕青是李泰祥的长子，后来也与父亲共同完成了《叹息瓶》的编曲。这首歌的写法与李泰祥另一首作品《今世》常被并提。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>V</span></div>
+
+    <!-- 05 女人与小孩 I -->
+    <article class="track" id="track-05" aria-labelledby="t05-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">05</span>
+        <div class="track__titles">
+          <h3 id="t05-h">女人与小孩 I</h3>
+          <span class="en">Woman &amp; the Child I</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>李格弟</li>
+        <li><b>作曲</b>伍佰</li>
+        <li><b>编曲</b>江建民</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t05-l">
+          <div class="panel__head">
+            <h4 id="t05-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="05">
+            <p class="note">When I wish upon a star</p>
+            <p class="verse">我的星星</p>
+            <p class="verse">
+              我不知道这个小孩怎样凭空而来<br>
+              他可能让我告别长久以来的摇摆<br>
+              带他回来给他一个温暖的家<br>
+              每天晚上散一个小小的步<br>
+              慢慢有人说那个小孩长得象我
+            </p>
+            <p class="verse">
+              跟我一样需要爱　一样的脆弱<br>
+              跟我一样害怕孤独和寂寞
+            </p>
+            <p class="verse verse--chorus">
+              象我这样的一个女人<br>
+              以及这样的一个小孩<br>
+              活在世界上<br>
+              小小一个角落<br>
+              彼此愈来愈相象<br>
+              愈来愈不能割舍
+            </p>
+            <p class="verse">
+              我不知道这个小孩是不是一个礼物<br>
+              但我知道我的生活不再原地踏步<br>
+              陪他长大给他很多很多的爱<br>
+              让他拥有自己的灵魂和梦
+            </p>
+            <p class="verse">
+              因为一个小孩是一个神秘的存在<br>
+              跟星星一样奇异　一样发着光<br>
+              跟水果一样新鲜　花一样芳香
+            </p>
+            <p class="verse verse--chorus">
+              象我这样的一个女人<br>
+              以及这样的一个小孩<br>
+              活在世界上小小一个角落<br>
+              彼此愈来愈相爱<br>
+              愈来愈互相依赖
+            </p>
+            <p class="verse verse--chorus">
+              象我这样的一个女人<br>
+              以及这样的一个小孩<br>
+              活在世界上小小一个角落<br>
+              彼此愈来愈相爱<br>
+              愈来愈相信安排
+            </p>
+            <p class="verse verse--bridge">
+              凭空而来<br>
+              一个温暖的家　一个礼物
+            </p>
+            <p class="note">我的星星　星星</p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t05-r">
+          <div class="panel__head">
+            <h4 id="t05-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="05">
+            <p>这首歌写的是「母亲」这个身份如何降临在一个不确信的人身上。</p>
+            <p>开篇的「我不知道这个小孩怎样凭空而来」值得停留：「凭空」是承认自己不理解这件事的来路。而到了结尾，同一个词第二次出现——「凭空而来／一个温暖的家　一个礼物」——它已经从意外变成了赠予。同一个词，前后两种读法，这是全曲最经济的设计。</p>
+            <p>三段副歌构成一条向上推进的线，也是全专辑里唯一一条明确的上升线：第一段收在「彼此愈来愈相象／愈来愈不能割舍」，第二段是「愈来愈相爱／愈来愈互相依赖」，第三段成了「愈来愈相爱／愈来愈相信安排」。从「相象」到「相爱」是转折，从「依赖」到「相信安排」是交付。三段句法几乎相同，只在末尾换词，这种写法让变化显得慢——而做母亲这件事，本来就不该被写成一次顿悟。在一张通篇讲分离与不可抵达的专辑里，这条上升线是需要被看见的。</p>
+            <p>歌词还有一处不落俗套的地方：它承认孩子是「一个神秘的存在」，「跟星星一样奇异」。把小孩与星星、水果、花并置，不是修辞上的甜，而是承认另一个生命的独立与不可知。结尾「我的星星　星星」，重复的「星星」从呼唤退成了自言自语。</p>
+            <p>这段词的来历也说明了它的立场：它原本不是为她的女儿写的。李格弟先写了一首题作「男人与狗」的词，齐豫喜欢那个体式，便请她改写成了「女人与小孩」。所以歌词里那种冷静的观察角度是有来处的——它写的不是一位母亲的自白，而是「女人」与「小孩」这两个位置之间的关系：两代之间并不是与生俱来的相互属于，而是短暂的扶持与拥有。</p>
+            <p class="note">【说明】公开评论对本曲着墨不多，且多与第 12 首混谈，因此本篇只处理文本与两首之间的关系，不对编曲与演唱下判断。两首共用同一段词，区别在演唱形式：这一首是独白，第 12 首是母女合唱。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            词原本不是为齐豫的女儿写的：李格弟先写了一首题作「男人与狗」的词，齐豫喜欢那个体式，请她改写成了「女人与小孩」。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>VI</span></div>
+
+    <!-- 06 话题 -->
+    <article class="track" id="track-06" aria-labelledby="t06-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">06</span>
+        <div class="track__titles">
+          <h3 id="t06-h">话题</h3>
+          <span class="en">Love's Silence</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词 · 作曲</b>黄舒骏</li>
+        <li><b>编曲</b>Jenny Chin · 周国仪</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t06-l">
+          <div class="panel__head">
+            <h4 id="t06-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="06">
+            <p class="verse">
+              因为我们之间开始有<br>
+              许多不该有的沉默<br>
+              所以我决定离你远走<br>
+              我会投入另一个时空<br>
+              过着陌生的生活<br>
+              在新的故事里沉浮
+            </p>
+            <p class="verse">
+              也许你不懂为什么<br>
+              我只是害怕爱人无话可说<br>
+              再多的吻也无法填补裂缝<br>
+              话题渐渐稀落<br>
+              暗示着我们爱在缓缓熄火<br>
+              曾经浓烈<br>
+              转眼已淡薄
+            </p>
+            <p class="verse verse--bridge">
+              无奈　孤单　忍耐
+            </p>
+            <p class="verse verse--chorus">
+              我的心多明白为了什么要离开<br>
+              又为了什么还要爱<br>
+              为了未来<br>
+              永远期待
+            </p>
+            <p class="verse verse--chorus">
+              我的心多澎湃<br>
+              带了许多话题回来<br>
+              要和你耳鬓厮磨一辈子不改
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t06-r">
+          <div class="panel__head">
+            <h4 id="t06-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="06">
+            <p>这首歌把「话题」当作一段关系存亡的指标，切入点很聪明：感情的破裂在生活里通常不是从争吵开始的，而是从无话可说开始的。</p>
+            <p>所以开篇是「因为我们之间开始有／许多不该有的沉默／所以我决定离你远走」——沉默是原因，离开是结果，因果摆得很清楚。而它写出的这种破裂，恰好是这张专辑关心的事：爱不是在某个瞬间断掉的，是在日常里一点点失去内容的。</p>
+            <p>全曲最狠的一句是「再多的吻也无法填补裂缝」。它用最身体的动作去写最精神的距离，而「再多的」三个字还暗示了叙述者曾经努力过。紧接着「话题渐渐稀落／暗示着我们爱在缓缓熄火」——「熄火」这个词是机械的、日常的，把一个抽象的过程说得像一个可以修理的东西，反而更让人无措。</p>
+            <p>「曾经浓烈／转眼已淡薄」是黄舒骏式的对句，干净，不修饰。而「无奈　孤单　忍耐」三个词单独成段，是全曲唯一的一处抒情留白，词在这里退让，让情绪自己站住。</p>
+            <p>结尾的处理也耐人寻味：叙述者并没有停在离开上，而是「我的心多澎湃／带了许多话题回来／要和你耳鬓厮磨一辈子不改」。人回来了，话题也带回来了，可这首歌真正问的问题是——带回来的话题够用多久。它不给答案。</p>
+            <p class="note">【说明】公开评论对这首只有两条概括性说法：它「唱出『沉默』之下所隐含的生命」，以及它属于专辑里让人回看现实、心生感触的那一类。关于编曲（Jenny Chin 与周国仪）没有可靠材料，本篇因此不作音乐描述。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词作曲黄舒骏，编曲 Jenny Chin 与周国仪。这首歌与《幸福》常被并提，是专辑里最让人回看现实的两首。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>VII</span></div>
+
+    <!-- 07 哭泣的骆驼 -->
+    <article class="track" id="track-07" aria-labelledby="t07-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">07</span>
+        <div class="track__titles">
+          <h3 id="t07-h">哭泣的骆驼</h3>
+          <span class="en">Tearless Weeping</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>许常德</li>
+        <li><b>作曲</b>郭子</li>
+        <li><b>编曲</b>涂惠元</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t07-l">
+          <div class="panel__head">
+            <h4 id="t07-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="07">
+            <p class="verse">
+              我背负着幸福<br>
+              却追寻着痛苦<br>
+              流浪也许是<br>
+              爱你唯一的去路
+            </p>
+            <p class="verse">
+              我一心想付出<br>
+              却忘记了收复<br>
+              遗忘也许是<br>
+              对你我最慈悲的祝福
+            </p>
+            <p class="verse verse--chorus">
+              生来温柔的双眸<br>
+              连哭都被诅咒<br>
+              没有泪<br>
+              寂寞要怎么流
+            </p>
+            <p class="verse verse--bridge">
+              风沙吹的我睁不开眼睛<br>
+              漆黑里走走停停<br>
+              沙漠<br>
+              连路都举棋不定<br>
+              心是北极星<br>
+              不问原因
+            </p>
+            <p class="verse verse--bridge">
+              风沙吹的我听不见爱情<br>
+              想回忆都难宁静<br>
+              你我<br>
+              连恨都举棋不定<br>
+              任由不知情的风沙<br>
+              卷去脚印
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t07-r">
+          <div class="panel__head">
+            <h4 id="t07-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="07">
+            <p>这首歌写的是淘汰了泪腺的骆驼身处沙漠中的无力与彷徨——空阔、辽远、苍茫、举棋不定。「淘汰了泪腺」这个说法很到位：它把「不能哭」从一种坚强的形象，还原成一种生理上的残缺，歌名里的「哭泣」因此成了一桩不可能的事。</p>
+            <p>在专辑的结构里，这首与《飞鸟与鱼》共同承担了标题的两个意象：飞鸟与鱼是空间的不可抵达，骆驼是时间与境遇里的困顿。如果说飞鸟与鱼写的是一种绝望的爱情，这首写的就是同一种宿命的另一种选择——爱太难，于是选择逃脱、选择流浪、选择遗忘，索性变成一头淘汰了泪腺的骆驼。</p>
+            <p class="note">【说明】本曲目前材料有限，涉及编曲（涂惠元）与人声处理的描述仍然缺失，补到后可扩至与《飞鸟与鱼》相当的篇幅。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词许常德，作曲郭子，编曲涂惠元。它与《飞鸟与鱼》共同承担了专辑标题的两个意象：飞鸟与鱼是空间的不可抵达，骆驼是境遇里的困顿。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>VIII</span></div>
+
+    <!-- 08 幸福 -->
+    <article class="track" id="track-08" aria-labelledby="t08-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">08</span>
+        <div class="track__titles">
+          <h3 id="t08-h">幸福</h3>
+          <span class="en">Bliss</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>齐豫</li>
+        <li><b>作曲</b>薛忠铭</li>
+        <li><b>编曲</b>江建民</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t08-l">
+          <div class="panel__head">
+            <h4 id="t08-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="08">
+            <p class="verse">
+              你说这次流浪不同以往<br>
+              它是一次身不由己的浪漫<br>
+              是一次没有计划的背叛<br>
+              能不能不算
+            </p>
+            <p class="verse">
+              这种说法常常在听　不算新鲜<br>
+              就算我也学会闭上一只眼<br>
+              它仍然比我想象中要难以下咽<br>
+              我该怎么演
+            </p>
+            <p class="verse verse--chorus">
+              放弃多少　才算贤淑<br>
+              保留多少　才算让步<br>
+              迷人的是忠诚还是背叛<br>
+              幸福是自由还是牵绊
+            </p>
+            <p class="verse">
+              有人唱相爱容易相处难<br>
+              有谁比我更懂其中甘苦谈<br>
+              闭眼容易　闭嘴太难　一切为时已晚
+            </p>
+            <p class="verse">
+              有人把幸福当事业来经营<br>
+              有人为了自由婚姻叫停<br>
+              到头来究竟是谁输谁赢　无人能评
+            </p>
+            <p class="verse verse--chorus">
+              放弃多少　才算贤淑<br>
+              保留多少　才算让步<br>
+              迷人的是忠诚还是背叛<br>
+              幸福是自由还是牵绊
+            </p>
+            <p class="verse">
+              其实幸福不只是王子与公主<br>
+              得要一种明谋暗算的天赋<br>
+              加上哑巴吃黄连的技术　同甘共苦
+            </p>
+            <p class="verse">
+              就算你是童话里的王子与公主<br>
+              幸福一样需要灌溉呵护<br>
+              自由是艺术　牵绊也需要一点儿魔术<br>
+              我愈说愈迷糊
+            </p>
+            <p class="verse verse--chorus">
+              放弃多少　才算贤淑<br>
+              保留多少　才算让步<br>
+              迷人的是忠诚还是背叛<br>
+              幸福是自由还是牵绊
+            </p>
+            <p class="verse verse--bridge">
+              婚姻是违反天性的制度<br>
+              让人忘却贪婪抵抗孤独<br>
+              有人因此停驻　有人一生进进出出<br>
+              都需要祝福
+            </p>
+            <p class="verse verse--chorus">
+              放弃多少　才算贤淑<br>
+              保留多少　才算让步<br>
+              迷人的是忠诚还是背叛<br>
+              幸福是自由还是牵绊　牵绊
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t08-r">
+          <div class="panel__head">
+            <h4 id="t08-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="08">
+            <p>这首歌是全专辑材料最丰富的一首，原因之一是齐豫本人在专辑文案里写得非常坦白。它也是专辑里第一首拿到外面认可的曲子——获选中华音乐人交流协会「1997 年度十大最佳单曲」。</p>
+            <p>创作顺序是先有词后有曲——齐豫的演唱作品多是先确定歌词再定制曲，这首词由她自己填。写词的过程里，她自己与朋友的故事交替出现在脑海里，她急于寻找答案，终于「愈说愈迷糊」。她在文案里说：自幼认可人性本善，自从谈过恋爱、有过婚姻之后，一切都不再黑白分明。</p>
+            <p>接下来是全篇最要紧的一段自述，它解释了副歌那四句自问从何而来：像她这样的女性一直忙着自己的 ego，一生求自我的发现与完成，在三从四德与女性解放之间作最没有效率的挣扎——既不会关注丈夫所有的一颦一笑，又无法放弃与人平起平坐的扶持概念，最后落得一句「予人压力 &amp; 不够女人」的旷世指责。于是才有「放弃多少才算贤淑？保留多少才算让步？」而按她的判断，现代女性尚未找到幸福密码，开放式的婚姻依然只是神话一则。</p>
+            <p>关于背叛，文案里同样有一段不客气的观察：睁一只眼闭一只眼的无上法门流传久远，但「闭眼不见得能闭上嘴」，老一辈的睁眼闭嘴早已失传；她也曾被人问过「能不能不算」，也苦练过闭眼，但「就是闭嘴一关过不了，哑巴吃黄连的技术比较难练」——这正是歌词里那两行的来处。</p>
+            <p>有一处录音室的细节最动人：在她唱到「幸福不只是王子与公主……」的那一天，黛安娜王妃因车祸去世，录音室里唏嘘不断。齐豫说这是个巧合，更是一团理不清的感触。她最终认清：幸福只是一种感觉，它没有一定的格式。</p>
+            <p>至于那句招来最多讨论的「婚姻是违反天性的制度」，她的解释并不激进：婚姻毕竟只是人类文化制定出来的一个制度，一个人不是天生一定要结婚的。</p>
+            <p>音乐形式上，这首歌以说唱风格调侃俗世中得来不易的婚姻法则，与《话题》并列，是专辑里最让人回看现实的两首。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            获选中华音乐人交流协会「1997 年度十大最佳单曲」。唱到「幸福不只是王子与公主」的那一天，黛安娜王妃因车祸去世——齐豫说那是个巧合，更是一团理不清的感触。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>IX</span></div>
+
+    <!-- 09 懒洋洋 -->
+    <article class="track" id="track-09" aria-labelledby="t09-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">09</span>
+        <div class="track__titles">
+          <h3 id="t09-h">懒洋洋</h3>
+          <span class="en">Lazy Love</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>Albert Leung</li>
+        <li><b>作曲 · 编曲</b>陈伟</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t09-l">
+          <div class="panel__head">
+            <h4 id="t09-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="09">
+            <p class="verse">
+              连灯光　都不愿再燃亮<br>
+              我们的这个老地方
+            </p>
+            <p class="verse">
+              花开过了　就不愿意再成长<br>
+              只剩下余香
+            </p>
+            <p class="verse">
+              连灰尘也不愿再飞扬<br>
+              像我们爱得懒洋洋<br>
+              就这么样一直到地老天荒没有任何希望
+            </p>
+            <p class="verse verse--chorus">
+              如果我换过别的衣裳<br>
+              你对我　会不会一样<br>
+              如果你换过别的脸庞<br>
+              我对你　有没有　新的欲望<br>
+              如果我换过别的衣裳<br>
+              你对我　就不会遗忘<br>
+              如果你躺在她的身旁<br>
+              你对我　会不会说个谎
+            </p>
+            <p class="verse">
+              花开过了　就不愿意再成长<br>
+              只剩下余香
+            </p>
+            <p class="verse verse--chorus">
+              如果我换过别的衣裳<br>
+              你对我　会不会一样<br>
+              如果你换过别的脸庞<br>
+              我对你　有没有　新的欲望<br>
+              如果我换过别的衣裳<br>
+              你对我　就不会遗忘<br>
+              如果你躺在她的身旁<br>
+              你对我　会不会说个谎
+            </p>
+            <p class="verse verse--chorus">
+              如果我换过别的衣裳<br>
+              你对我　会不会一样<br>
+              如果你换过别的脸庞<br>
+              我对你　有没有　新的欲望<br>
+              如果我换过别的衣裳<br>
+              你对我　就不会遗忘<br>
+              如果你躺在她的身旁你对我会不会说个谎
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t09-r">
+          <div class="panel__head">
+            <h4 id="t09-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="09">
+            <p>这首歌的音乐底色是 triphop。01:50 之后配器转为华丽摩登，这种风格鲜明、配器华丽的做法，正是 90 年代优秀专辑的共同特点。</p>
+            <p>结构上最贴切的一句概括是：前半段是黯自神伤的纠缠，后半段是律动起来、有自己的态度——这与专辑文案里说的「前半段旷远、后半段灵动」是同一个观察。</p>
+            <p>题目本身可以被读得很深：懒洋洋很精准地描述了人生的诸多情事，热情终将减退，最初的明亮神光在漫长停摆的生活中磨灭了光泽，这或许是生命的本质。拥有意味着失去，到达即幻灭，唯一真实纯粹美好的乐园是我们失去的乐园，而此刻与未来，很多时候只令人懒洋洋地疲倦。</p>
+            <p>歌词里那组「换过别的衣裳／换过别的脸庞」的假设，还有一层更冷的读法：恋人不再关心对方的悲喜爱憎，幻想如果有更温柔的话语、更完美的面具、更艳丽的伪装就能留住彼此——至此，彼此角色的意义早就被掏去了，内里被填入了一堆虚假的符号。我无谓是我，你也无谓是你，我们懒洋洋地离开一段虚拟的演构，紧接着又懒洋洋地进入下一段。换一个载体也不易察觉——被看见或许是幻觉，但不失为一种美好的饮鸩止渴。</p>
+            <p>这些读解未必都是词作者的意图，但它们共同说明了一件事：这首听起来最轻松的歌，其实是专辑里少有的一首关于「爱的形式已经空掉」的歌。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词Albert Leung，作曲与编曲陈伟。音乐底色是 triphop，01:50 之后配器转为华丽摩登；前半段旷远，后半段灵动。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>X</span></div>
+
+    <!-- 10 四十个无亲无故的年头 -->
+    <article class="track" id="track-10" aria-labelledby="t10-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">10</span>
+        <div class="track__titles">
+          <h3 id="t10-h">四十个无亲无故的年头</h3>
+          <span class="en">Forty Lone Years</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>齐豫</li>
+        <li><b>作曲 · 编曲</b>李泰铭</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t10-l">
+          <div class="panel__head">
+            <h4 id="t10-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="10">
+            <p class="verse">
+              非在不得已的时候<br>
+              母亲才会想起北方<br>
+              早已忘了什么是冰天雪地<br>
+              早已忘了和她母亲最后的一次拥抱<br>
+              凉凉的白色就是她褪色的记忆
+            </p>
+            <p class="verse">
+              非在酒酣耳红的时候<br>
+              父亲才会谈起北方<br>
+              忘不了的是热情少年的血<br>
+              忘不了的是四十年前一张又一张的脸<br>
+              粘粘的红色就是他暖暖的记忆
+            </p>
+            <p class="verse verse--chorus">
+              四十年前的雪花白<br>
+              白了记忆也白了发<br>
+              四十年后的夕阳红<br>
+              心头暖暖的血更红啊
+            </p>
+            <p class="verse verse--note">
+              是四十个无亲无故的年头
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t10-r">
+          <div class="panel__head">
+            <h4 id="t10-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="10">
+            <p>这首歌的背景交代得最完整，而且它有一个别的歌没有的特点：词作者、曲作者与歌里的主人公，来自同一个家庭。作词是齐豫本人，曲与编曲出自李泰铭——李泰祥的胞弟，也是齐豫当时的丈夫。</p>
+            <p>灵感直接来自齐豫父母的亲身经历：父亲齐济在酒酣耳热时常回忆东北老家的情形，母亲则向她讲过在严寒冬天坚持穿裙子上学的往事。齐豫祖籍山东，父亲出生在东北，是家族在东北的第七代，后来与母亲移民至台湾。「齐豫」这个名字本身也与家族渊源有关：父亲名「齐济」，取自「济水之下分九州」，他最初想用九州的字为孩子命名，后因部分字拗口而改用相关的省份名称——于是她的哥哥、她自己与弟弟的名字，分别对应鲁、豫、秦。</p>
+            <p>创作动机来自对生命传承的感触。随着老一辈渐渐凋零，她深感「生命的连接性断掉了，只有去处，没有来处」。这首歌写的是一对老人背井离乡远赴台岛、四十年无亲无依。齐豫自己的说法值得完整引用：「那种无以伦比的时代压迫感，总让我无法自已。四十年里每天 24 小时的煎熬惶恐，几近一生的画面变白变红，变成一首四分半的歌与词，压缩得如同一颗小小的原子弹，蕴藏着无限的张力与可燃性，一触即发。感谢泰铭在旋律与编曲上给了我要的那种战火苍茫、人力无法回天的渺小与硕大共存之感。」</p>
+            <p>音响上，钢琴与小提琴的伴奏托着齐豫的声音在夜里的空气中飘荡，让人难以承受。有听者用了一句很重的比喻：听到「四十年前的雪花白，白了记忆也白了发」时，沉重的历史感如同暴雪将我掩埋。</p>
+            <p>这首歌还可以接进一条更长的脉络：它与《爸爸的草鞋》《戏雪》一脉相承，都是写这一代人的离乡与无奈。这个参照说明它不是孤立的抒情，而是台湾流行乐里一条迁延线索上的一环。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词齐豫，作曲与编曲李泰铭——李泰祥的胞弟，也是齐豫当时的丈夫。歌里写的是她父母那一代人从东北到台湾的四十年。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>XI</span></div>
+
+    <!-- 11 叹息瓶 -->
+    <article class="track" id="track-11" aria-labelledby="t11-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">11</span>
+        <div class="track__titles">
+          <h3 id="t11-h">叹息瓶</h3>
+          <span class="en">Bottle of Sighs</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>李格弟</li>
+        <li><b>作曲</b>李泰祥</li>
+        <li><b>编曲</b>李泰祥 · 李奕青</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t11-l">
+          <div class="panel__head">
+            <h4 id="t11-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="11">
+            <p class="verse">
+              想你的时候忍不住有一声叹息<br>
+              很想找个瓶子封起<br>
+              我的瓶子里没有时间<br>
+              我的瓶子里没有季节<br>
+              没有颜色也没有眼泪<br>
+              只是叹息很干净干净
+            </p>
+            <p class="verse">
+              想你的时候忍不住有一声叹息<br>
+              很想找个瓶子封起<br>
+              我的瓶子里没有时间<br>
+              我的瓶子里没有季节<br>
+              没有颜色也没有眼泪<br>
+              啦啦……<br>
+              只是叹息只是叹息<br>
+              很干净<br>
+              很干净<br>
+              很干净……<br>
+              干<br>
+              净
+            </p>
+            <p class="verse verse--chorus">
+              那些叹息的瓶子像起伏的海洋<br>
+              和你擦肩而过的遗忘<br>
+              是一生的惊涛骇浪<br>
+              是一生的惊涛骇浪
+            </p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t11-r">
+          <div class="panel__head">
+            <h4 id="t11-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="11">
+            <p>这首歌在整张专辑里几乎被当作顶点来谈，制作上也确实是一处极限：齐豫在录制时叠了 80 轨人声——这个数字出自她本人的公开说法。一件事被做成这样，说的其实是：这首歌的人声不是一条线，而是一整片。而它的编曲由李泰祥与李奕青父子共同完成。</p>
+            <p>声场是这首歌最先被注意到的地方：声音像从头顶传来，如同神的喃喃自语，穿越历史尘烟；层叠丰富的编曲把声场撑得极大，好像在海平面上从四面八方传来，平静却磅礴得让灵魂颤抖。</p>
+            <p>李泰祥把《叹息瓶》这类作品归为「大众艺术歌」——这个自定的类别恰好说明了它的位置：既在流行歌曲的疆域内，又带着艺术歌的野心。配器里有满满的佛教意味，那种广阔、普渡，以及东方特有的含蓄美，难得的是它没有故意去说教任何哲理。而歌词把叹息比作起伏的海浪，这样的写法如今已少有人能出其右。</p>
+            <p>有一句判断值得单独保留：听完这首歌，也就不难理解齐豫后来为什么会去唱佛歌。它是放下爱恨之后的超脱，是菩萨低眉眼观众生而发出的一声喟叹。这也解释了为什么这首歌常被听者称为「圣曲」。</p>
+            <p>在听感层面，最具体的一段描述是：海浪层层叠叠堆积，飘渺的人声像从海上传来，最后波涛汹涌拍打海岸，海里的塞壬也歌唱到了高潮，将情绪肆意释放在最后两句，每次听完都意犹未尽。这与制作上人声层层叠加的做法互相印证——整首歌的结构就是层层堆积到最后一次释放。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            作词李格弟，作曲李泰祥，编曲由李泰祥与李奕青父子共同完成。李泰祥把这类作品归为「大众艺术歌」。录制时齐豫叠了 80 轨人声——此说出自她本人的公开说法。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <div class="divider" aria-hidden="true"><span>XII</span></div>
+
+    <!-- 12 女人与小孩 II -->
+    <article class="track" id="track-12" aria-labelledby="t12-h">
+      <header class="track__head">
+        <span class="track__no" aria-hidden="true">12</span>
+        <div class="track__titles">
+          <h3 id="t12-h">女人与小孩 II</h3>
+          <span class="en">Woman &amp; the Child II</span>
+        </div>
+        <span class="track__time">—:—</span>
+      </header>
+      <ul class="track__credits">
+        <li><b>作词</b>李格弟</li>
+        <li><b>作曲</b>伍佰</li>
+        <li><b>编曲</b>江建民</li>
+        <li><b>合唱</b>齐豫与女儿李洁</li>
+      </ul>
+      <div class="track__body">
+
+        <section class="panel" aria-labelledby="t12-l">
+          <div class="panel__head">
+            <h4 id="t12-l">歌词</h4>
+            <span class="en">Lyrics</span>
+                      </div>
+          <!-- 歌词已填 -->
+          <div class="lyrics" data-track="12">
+            <p class="note">「女人与小孩」</p>
+            <p class="note">When I wish upon a star</p>
+            <p class="verse">我的星星</p>
+            <p class="verse">
+              我不知道这个小孩怎样凭空而来<br>
+              他可能让我告别长久以来的摇摆<br>
+              带他回来给他一个温暖的家<br>
+              每天晚上散一个小小的步<br>
+              慢慢有人说那个小孩长得象我
+            </p>
+            <p class="verse">
+              跟我一样需要爱　一样的脆弱<br>
+              跟我一样害怕孤独和寂寞
+            </p>
+            <p class="verse verse--chorus">
+              象我这样的一个女人<br>
+              以及这样的一个小孩<br>
+              活在世界上<br>
+              小小一个角落<br>
+              彼此愈来愈相象<br>
+              愈来愈不能割舍
+            </p>
+            <p class="verse">
+              我不知道这个小孩是不是一个礼物<br>
+              但我知道我的生活不再原地踏步<br>
+              陪他长大给他很多很多的爱<br>
+              让他拥有自己的灵魂和梦
+            </p>
+            <p class="verse">
+              因为一个小孩是一个神秘的存在<br>
+              跟星星一样奇异　一样发着光<br>
+              跟水果一样新鲜　花一样芳香
+            </p>
+            <p class="verse verse--chorus">
+              象我这样的一个女人<br>
+              以及这样的一个小孩<br>
+              活在世界上小小一个角落<br>
+              彼此愈来愈相爱<br>
+              愈来愈互相依赖
+            </p>
+            <p class="verse verse--chorus">
+              象我这样的一个女人<br>
+              以及这样的一个小孩<br>
+              活在世界上小小一个角落<br>
+              彼此愈来愈相爱<br>
+              愈来愈相信安排
+            </p>
+            <p class="verse verse--bridge">
+              凭空而来<br>
+              一个温暖的家　一个礼物
+            </p>
+            <p class="note">我的星星　星星</p>
+            <p class="note">「OK」</p>
+          </div>
+          <!-- /歌词已填 -->
+        </section>
+
+        <section class="review" aria-labelledby="t12-r">
+          <div class="panel__head">
+            <h4 id="t12-r">乐评</h4>
+            <span class="en">Review</span>
+          </div>
+          <!-- 乐评已填 -->
+          <div class="review__body" data-track="12">
+            <p>这首歌是专辑的收尾，也是齐豫第一次把家庭情感公开放进自己的音乐里。专辑由滚石唱片发行于 1997 年 12 月 9 日，作为最后一首，它完成了齐豫个人音乐创作与家庭情感的首次公开融合。</p>
+            <p>演唱形式上，齐豫在女儿李洁 4 岁时邀请她参与演唱，母女通过主音与和声的配合，形成音乐层次上的对话关系。李洁的部分被形容为「充满灵气的和声」，在副歌的「呜……」段落形成了复调式的声效；这种配合既强化了歌曲的情感真实度，也构成了流行音乐中少见的亲子声线组合。</p>
+            <p>把这一首与第 05 首放在一起看，两首共用同一段李格弟的词，而那段词原本的题目是「男人与狗」——是齐豫请李格弟改写成「女人与小孩」的。这个来处让歌词的立场变得清楚：它要写的不是母爱的颂歌，而是「女人」与「小孩」两个位置之间的关系——两代之间不是与生俱来的相互属于，而是短暂的扶持与拥有。而合唱这个形式，恰好把「两个位置」变成了「两个人的声音」。</p>
+            <p>歌词用意识流的手法描绘亲子关系的动态变化：「凭空而来」这样的意象既暗合生命传承的偶然性，又通过「愈来愈相象」这类具象描写，呈现出亲情纽带形成的必然性。</p>
+            <p>伍佰的旋律以分解和弦为主，在 4/4 拍里构建出温柔的空间；配器为钢琴与弦乐，既保持民谣的叙事性，又强化了抒情歌曲的情感厚度。</p>
+            <p>这首歌的主题可以分成三层：生命影响——「凭空而来的孩子」改变了母亲的生活轨迹，「拥有自己的灵魂和梦」暗示孩子对母亲世界观的重构；情感共生——「给他很多很多的爱」直指母爱的无私与延续；独立成长——「拥有自己的灵魂和梦」同时强调在亲子关系中保持个体独立的重要。换句话说，它既写母亲抚育孩子的过程，也暗示孩子促使母亲完成自我成长的反向作用。</p>
+            <p>演唱上，齐豫保持了标志性的空灵嗓音，同时加入了更具生活气息的咬字处理，自然而积极，充满温柔的关怀之情。</p>
+            <p>歌词里那两处括号式的短句也已经清楚：「女人与小孩」与「OK」都是李洁的念白。这个安排比它看上去更有分量——母亲唱，孩子说；而孩子说出的第一句，正好是这首歌的名字。于是整首歌的框架是孩子给的：她先说出「女人与小孩」，把演唱者和自己一起放进了这个题目里，最后再以一个「OK」收尾。一张谈父母、孩子、爱人、敌人与自己的专辑，最后收在一个小女孩的一句「OK」上——整张唱片结束时留下的，是孩子的声音。这句「OK」既是磁带里的应答，也可以读成她对这首歌、乃至对这段被写进歌里的关系的认可：两句都成立，而且都轻。</p>
+          </div>
+          <!-- /乐评已填 -->
+
+          <aside class="stamp">
+            <b>Annotation</b>
+            齐豫与女儿李洁合唱，李洁当时 4 岁；词李格弟，曲伍佰，编曲江建民。歌词开头的「女人与小孩」与结尾的「OK」都是李洁的念白。
+          </aside>
+        </section>
+
+      </div>
+    </article>
+
+    <!-- D. 附录 -->
+    <section class="chapter visual-archive" id="visual-archive" aria-labelledby="visual-archive-h">
+      <p class="eyebrow">D · Visual Archive</p>
+      <h2 id="visual-archive-h">专辑图像档案</h2>
+      <p class="visual-archive__intro">没有放进逐曲乐评的扫描页，留在这里作为一段可以慢慢翻阅的纸上旁支：封面、曲目表、手写页与制作信息，保留原始纸张的褐色纹理。</p>
+      <div class="visual-archive__grid">
+        <figure><a href="assets/scans/raw/img084.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img084.jpg" alt="专辑封面肖像" loading="lazy"></a><figcaption>封面肖像 · 齐豫</figcaption></figure>
+        <figure><a href="assets/scans/raw/img085.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img085.jpg" alt="专辑宣传文字页" loading="lazy"></a><figcaption>宣传页 · 专辑简介</figcaption></figure>
+        <figure><a href="assets/scans/raw/img086.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img086.jpg" alt="专辑唱片" loading="lazy"></a><figcaption>唱片 · 骆驼飞鸟鱼</figcaption></figure>
+        <figure><a href="assets/scans/raw/img087.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img087.jpg" alt="专辑封底与曲目版权信息" loading="lazy"></a><figcaption>封底 · 曲目与版权信息</figcaption></figure>
+        <figure><a href="assets/scans/raw/img088.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img088.jpg" alt="专辑曲目表与肖像内页" loading="lazy"></a><figcaption>内页 · 曲目表与肖像</figcaption></figure>
+        <figure><a href="assets/scans/raw/img089.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img089.jpg" alt="手写文字内页" loading="lazy"></a><figcaption>手写内页 · 文字</figcaption></figure>
+        <figure><a href="assets/scans/raw/img090.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img090.jpg" alt="骆驼与飞鸟图像内页" loading="lazy"></a><figcaption>图像内页 · 骆驼与飞鸟</figcaption></figure>
+        <figure><a href="assets/scans/raw/img099.jpg" target="_blank" rel="noopener"><img src="assets/scans/raw/img099.jpg" alt="女人与小孩第二首及制作信息内页" loading="lazy"></a><figcaption>内页 · 女人与小孩 II / 制作信息</figcaption></figure>
+      </div>
+    </section>
+
+    <section class="chapter appendix" id="appendix" aria-labelledby="appendix-h">
+      <p class="chapter__label">Appendix</p>
+      <h2 id="appendix-h">制作、奖项与文本脉络</h2>
+
+      <!-- 专辑总乐评（长文） -->
+      <section aria-labelledby="longreview-h" style="margin-top:2.4em">
+        <div class="panel__head">
+          <h4 id="longreview-h">总论 · 长评</h4>
+          <span class="en">Essay</span>
+        </div>
+          <p class="method"><b>方法说明</b>　本页的听感描述、创作背景与作品评价，整理自公开评论与齐豫本人的专辑文案，并非本站的独立听感判断；事实性信息（发行、时长、奖项、署名、创作者关系）已逐条核实。</p>
+        <!-- 乐评已填 -->
+        <div class="review__body" data-track="00">
+          <p>「十年了，终于再见到齐豫的国语唱片。十二首歌给父母，孩子，所爱的人，敌人，和自己。」——这是这张专辑流传最广的一句引言，也是专辑自己的定位：十二首歌，分别留了位子给她的父母、孩子、她爱的人、她的敌人、她自己，以及听众。</p>
+          <p>1997 年 12 月 9 日，这张专辑由滚石唱片发行，十二首歌，全长 57 分 43 秒。距她上一张原创中文专辑《有没有这种说法》已九年，录制本身花了三年。她那一年 40 岁——对一位女歌手来说，这恰好是嗓音与见识同时趋于完备的年纪，而她选择把这份完备交给一张不讨好市场的唱片。这也是她制作的最后一张普通话流行音乐专辑。</p>
+          <p>专辑的题目由三个意象构成：骆驼、飞鸟、鱼，分别落在《哭泣的骆驼》与《飞鸟与鱼》两首歌里。三个意象指向同一种体验：受限的处境、不可抵达的爱、以及在被限定的空间里继续活下去的耐力。从个人情感出发一路向内走，这张专辑最终谈的是父母、婚姻、子女、故土、女性处境乃至生死——它从一般专辑立足的简单情爱里走出来，抵达的是一种关于宏大人生的哲思。</p>
+          <p>音乐语言上，这张专辑并不安分。《幸福》用了近乎说唱的唱词；《叹息瓶》据齐豫自己说叠了 80 轨人声；《懒洋洋》带着 triphop 的底色；而《既然你问起》干脆没有主歌副歌的传统结构，编曲完全跟着歌词走。这些做法在 1997 年的华语流行乐里都算超前。多年来对这张专辑的一句通行判断是：齐豫完全没有在考虑市场和销量，她在做自己想做的事。</p>
+          <p>这张专辑的词出自多位作者，却没有散掉，原因之一是每种声腔都各司其职。李格弟带来诗与飘忽的观察角度（《既然你问起》《女人与小孩 I / II》《叹息瓶》）；许常德写的是挣扎之后的沉默（《哭泣的骆驼》）；Albert Leung的词是都市的、直接的（《懒洋洋》）；黄舒骏擅长把日常的破裂讲清楚（《话题》）；而齐豫自己的五首词各有各的写法——《飞鸟与鱼》借一个影像化的比喻，《有没有》用严密的对仗，《幸福》近乎散文，《四十个无亲无故的年头》则干脆变成叙事。五种笔法并列而不互相抵消，这本身就是这张专辑耐听的原因之一。</p>
+          <p>奖项的时间线值得理清。1998 年 5 月 29 日，齐豫凭这张专辑获得第九届金曲奖最佳国语女演唱人奖，报奖单位为滚石国际音乐股份有限公司，而制作人一栏写的是她自己的名字。同届入围的四位是张惠妹《BAD BOY》、许景淳《纯·景淳》、顺子《顺子》与李玟《每一次想你》——那几年华语流行乐最响亮的几张女声唱片都在其中，而四张里只有齐豫这一张，是完全由歌手本人制作的专辑。奖项的选择因此不只是偏爱某种风格，也是承认了一种做法：一个歌手可以不为市场做唱片，而且可以凭它拿奖。同届她还以《飞鸟与鱼》入围最佳作词人奖。而在此前一年，第八届金曲奖（1997 年）把特别奖授予了李泰祥；同届的最佳国语男演唱人是齐秦（《丝路》）。李泰祥是齐豫的恩师，也是她首张专辑《橄榄树》的制作人；齐秦是她的弟弟，也为本专辑的《飞鸟与鱼》作曲与和声。师徒、姐弟，在同一年一前一后地被同一个奖项承认——这条线比任何评论都更能说明齐豫站在什么位置上。</p>
+          <p>而在专辑内部，还藏着另一重更私人的关系。李泰祥的胞弟李泰铭，是《四十个无亲无故的年头》的作曲与编曲，也是齐豫当时的丈夫；李泰祥的长子李奕青，是《既然你问起》的编曲，并与父亲共同完成了《叹息瓶》的编曲。再加上齐秦的作曲——这张唱片几乎是在一个家族的手里完成的。它最好的几首歌里，有三首出自同一个家庭的两代人。</p>
+          <p>这张专辑通常被看作齐豫的分水岭。她在此之后逐步转向佛教音乐，而《骆驼·飞鸟·鱼》正好停在门槛上：它最阴郁，也最深刻反省世界，却是高于人间又不超脱于人间的一种尺度。《叹息瓶》被反复提起，正因为那里已经显出后来的方向——广阔、普渡，却不说教；听完这首，就不难理解她后来为什么会去唱佛歌。</p>
+          <p>围绕这张专辑，最常出现的词是「超越」「悲悯」「干净」「诗」。这些词都恰当，但若只留下这些词，反而会失掉它真正的分量。它的分量在于：它把父母与故土、婚姻与制度、女性在家庭中的实际处境、身体与欲望、历史与死亡，全都放进了十二首歌里，而且没有给出任何廉价的答案。所以最准确的总结或许是那句：这张专辑里，「你可以听到神性，也可以听到人性，这并不矛盾」。</p>
+        </div>
+        <!-- /乐评已填 -->
+      </section>
+
+      <!-- 制作名单 -->
+      <div class="credits-grid">
+        <section>
+          <h4>创作者</h4>
+          <ul>
+            <li><b>李泰祥</b>　作曲（《既然你问起》《叹息瓶》）／师承与实验性血脉</li>
+            <li><b>李泰铭</b>　作曲 · 编曲（《四十个无亲无故的年头》）</li>
+            <li><b>涂惠元</b>　编曲（《飞鸟与鱼》《有没有》《哭泣的骆驼》）</li>
+            <li><b>郭子</b>　作曲（《觉》《哭泣的骆驼》）</li>
+            <li><b>伍佰</b>　作曲（《女人与小孩 I》）</li>
+            <li><b>黄舒骏</b>　词曲（《话题》）</li>
+            <li><b>薛忠铭</b>　作曲（《幸福》）</li>
+            <li><b>陈伟</b>　作曲 · 编曲（《懒洋洋》）</li>
+            <li><b>江建民</b>　编曲（《女人与小孩 I》《幸福》）</li>
+            <li><b>李奕青</b>　编曲（《既然你问起》）</li>
+            <li><b>Jenny Chin · 周国仪</b>　编曲（《话题》《觉》）</li>
+            <li><b>陈爱珍</b>　编曲（《觉》）</li>
+            <li><b>齐秦</b>　作曲 · 和声（《飞鸟与鱼》）</li>
+          </ul>
+        </section>
+        <section>
+          <h4>词作</h4>
+          <ul>
+            <li><b>李格弟</b>　《既然你问起》《女人与小孩 I / II》《叹息瓶》等</li>
+            <li><b>许常德</b>　词作</li>
+            <li><b>Albert Leung</b>　词作</li>
+            <li><b>齐豫</b>　含主打《飞鸟与鱼》在内五首</li>
+          </ul>
+        </section>
+        <section>
+          <h4>专辑资料</h4>
+          <ul>
+            <li><b>发行</b>　1997 年 12 月 9 日</li>
+            <li><b>制作期</b>　三年</li>
+            <li><b>曲目</b>　12 首</li>
+            <li><b>奖项</b>　第 9 届金曲奖最佳国语女演唱人奖</li>
+            <li><b>厂牌</b>　滚石国际音乐股份有限公司</li>
+            <li><b>制作人</b>　齐豫</li>
+            <li><b>片长</b>　57 分 43 秒</li>
+            <li><b>再版</b>　2009 年 12 月 21 日 · 广东星外星唱片</li>
+          </ul>
+        </section>
+      </div>
+
+      <!-- 主题索引 -->
+      <h3 style="margin:3em 0 0;font-size:clamp(20px,2.2vw,26px);letter-spacing:.04em;color:var(--ink)">
+        主题索引
+      </h3>
+      <ul class="threads">
+        <li><b>飞鸟与鱼</b><span>总在一起，永远分离：不可抵达之爱，及不可跨越的存在层级。</span></li>
+        <li><b>觉</b><span>大义背后的具体牺牲；以妻子口吻回写历史，让缺席者开口。</span></li>
+        <li><b>女人与小孩 I / II</b><span>母女：两个生命彼此独立又互相联结；从独白到对话的位移。</span></li>
+        <li><b>叹息瓶</b><span>收集、封存、漂流：无处投递之叹息的容器。</span></li>
+        <li><b>哭泣的骆驼</b><span>忍耐是否被神化；沉默者的眼泪。</span></li>
+        <li><b>四十个无亲无故的年头</b><span>时间与孤绝的双重计量。</span></li>
+        <li><b>幸福 / 懒洋洋</b><span>严肃底色之上的松弛与反讽，专辑情绪的呼吸口。</span></li>
+      </ul>
+
+      <p class="source">
+        乐评的听感描述、创作背景与作品评价整理自公开评论与齐豫本人的专辑文案，并非本站的独立听感判断；事实性信息（发行、时长、奖项、署名、创作者关系）已逐条核实。歌词版权归原词曲作者及发行方所有，本页仅作评述与阅读之用。
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<!-- E. 页脚 -->
+<footer class="colophon">
+  <div class="colophon__inner">
+    <div>
+      <p class="sign">Chyi Yu · 1997</p>
+      <h2>骆驼·飞鸟·鱼</h2>
+      <p>
+        骆驼行走于地，飞鸟盘旋于天，鱼潜游于水——三种纬度，三种沉默。
+        它们从未在任何一首歌里同时出现，只是被并置在同一个标题里；
+        而这个标题要说的，也许正是它们永远分离。
+      </p>
+      <a class="top" href="#top">回到封面 ↑</a>
+    </div>
+    <div>
+      <p class="colophon__note">
+        本页以《骆驼·飞鸟·鱼》的纸张质感与暖褐色调为线索，收录专辑介绍、逐曲歌词与乐评、内页扫描，以及本地试听。
+      </p>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* 0) 标题单行自适应：字号先由 CSS 给出（含各断点的 clamp 基准），
+      若实测宽度溢出，则逐级收紧字号与字距，保证「骆驼·飞鸟·鱼」始终一行 */
+(function(){
+  var line = document.querySelector('.title-line');
+  var h1 = document.getElementById('album-title');
+  if (!line || !h1) return;
+
+  function fit(){
+    h1.style.fontSize = '';
+    h1.style.letterSpacing = '';
+    h1.style.width = 'max-content';   /* 量取文本真实宽度，不受容器宽度限制 */
+    var avail = line.clientWidth;
+    var base = parseFloat(getComputedStyle(h1).fontSize);
+    var size = base, spacing = 0.03, guard = 0;
+    /* 先收紧字距，再逐级缩小字号，直到单行放入可用宽度 */
+    while (avail > 0 && h1.getBoundingClientRect().width > avail && guard++ < 40){
+      if (spacing > 0.005) spacing = Math.max(0.005, spacing - 0.005);
+      else size *= 0.97;
+      if (size < 15) break;
+      h1.style.fontSize = size.toFixed(2) + 'px';
+      h1.style.letterSpacing = spacing.toFixed(3) + 'em';
+    }
+    h1.style.width = '';              /* 测量结束，回到撑满容器宽度 */
+  }
+
+  fit();
+  addEventListener('resize', fit);
+  addEventListener('orientationchange', fit);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  addEventListener('load', fit);
+  setTimeout(fit, 1200);              /* 中文字体异步载入后复测一次 */
+})();
+
+/* 1) 阅读进度条 */
+(function(){
+  var bar = document.getElementById('progress');
+  function update(){
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var p = max > 0 ? (h.scrollTop || document.body.scrollTop) / max : 0;
+    bar.style.width = (p * 100).toFixed(2) + '%';
+  }
+  addEventListener('scroll', update, {passive:true});
+  addEventListener('resize', update);
+  update();
+})();
+
+/* 2) 目录高亮（滚动跟随） */
+(function(){
+  var links = Array.prototype.slice.call(document.querySelectorAll('.rail a[href^="#"]'));
+  var map = {};
+  links.forEach(function(a){
+    var el = document.querySelector(a.getAttribute('href'));
+    if (el) map[el.id] = a;
+  });
+  var targets = Object.keys(map).map(function(id){ return document.getElementById(id); });
+  if (!('IntersectionObserver' in window) || !targets.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (e.isIntersecting){
+        links.forEach(function(a){ a.removeAttribute('aria-current'); });
+        var a = map[e.target.id];
+        if (a) a.setAttribute('aria-current','true');
+      }
+    });
+  }, {rootMargin: '-15% 0px -70% 0px', threshold: 0});
+  targets.forEach(function(t){ io.observe(t); });
+})();
+
+/* 3) 本地试听与逐曲内页：音频和扫描图都随网页目录发布，不依赖第三方音乐站 */
+(function(){
+  var durations = {
+    '01': '4:37', '02': '4:40', '03': '4:26', '04': '6:23',
+    '05': '4:01', '06': '4:27', '07': '4:01', '08': '4:15',
+    '09': '4:34', '10': '4:56', '11': '7:18', '12': '4:06'
+  };
+  var audioFiles = {
+    '01': '01.飞鸟与鱼.mp3',
+    '02': '02.觉（遥寄林觉民）.mp3',
+    '03': '03.有没有.mp3',
+    '04': '04.既然你问起.mp3',
+    '05': '05.女人与小孩.mp3',
+    '06': '06.话题.mp3',
+    '07': '07.哭泣的骆驼.mp3',
+    '08': '08.幸福.mp3',
+    '09': '09.懒洋洋.mp3',
+    '10': '10.四十个无亲无故的年头.mp3',
+    '11': '11.叹息瓶.mp3',
+    '12': '12.女人与小孩2.mp3'
+  };
+  var scanFiles = {
+    '01': ['track-01-left.jpg','track-01-right.jpg'],
+    '02': ['track-02.jpg'], '03': ['track-03.jpg'], '04': ['track-04.jpg'],
+    '05': ['track-05.jpg'], '06': ['track-06.jpg'],
+    '07': ['track-07-left.jpg','track-07-right.jpg'], '08': ['track-08.jpg'],
+    '09': ['track-09.jpg'], '10': ['track-10.jpg'], '11': ['track-11.jpg'], '12': ['track-12.jpg']
+  };
+  var tracks = document.querySelectorAll('.track');
+  Array.prototype.forEach.call(tracks, function(track){
+    var id = (track.id.match(/track-(\d+)/) || [,''])[1];
+    var title = track.querySelector('.track__titles h3');
+    var review = track.querySelector('.review');
+    if (!id || !title || !review) return;
+
+    var audio = document.createElement('audio');
+    audio.preload = 'none';
+    audio.src = 'assets/audio/' + encodeURIComponent(audioFiles[id]);
+    audio.setAttribute('aria-hidden', 'true');
+    audio.style.display = 'none';
+    var button = document.createElement('button');
+    button.type = 'button'; button.className = 'audio-toggle';
+    button.textContent = '试听';
+    button.setAttribute('aria-label', '播放 ' + title.firstChild.textContent.trim());
+    button.setAttribute('aria-pressed', 'false');
+    var time = track.querySelector('.track__time');
+    if (time && durations[id]) time.textContent = durations[id];
+    button.addEventListener('click', function(){
+      if (audio.paused){
+        document.querySelectorAll('.track audio').forEach(function(other){
+          if (other !== audio){ other.pause(); other.parentNode.querySelector('.audio-toggle').classList.remove('is-playing'); }
+        });
+        audio.play().then(function(){ button.classList.add('is-playing'); button.textContent = '暂停'; button.setAttribute('aria-pressed', 'true'); }).catch(function(){ button.textContent = '无法播放'; });
+      } else { audio.pause(); }
+    });
+    audio.addEventListener('pause', function(){ button.classList.remove('is-playing'); button.textContent = '试听'; button.setAttribute('aria-pressed', 'false'); });
+    audio.addEventListener('ended', function(){ button.classList.remove('is-playing'); button.textContent = '重听'; button.setAttribute('aria-pressed', 'false'); });
+    audio.addEventListener('error', function(){ button.classList.remove('is-playing'); button.textContent = '音频不可用'; button.disabled = true; });
+    title.appendChild(button); title.appendChild(audio);
+
+    var note = document.createElement('div'); note.className = 'scan-note';
+    var label = document.createElement('div'); label.className = 'scan-note__label';
+    label.innerHTML = '<span>Inner sleeve</span><span>Scan ' + id + '</span>';
+    var pages = document.createElement('div'); pages.className = 'scan-pages';
+    (scanFiles[id] || []).forEach(function(file, index){
+      var link = document.createElement('a'); link.href = 'assets/scans/' + file; link.target = '_blank'; link.rel = 'noopener';
+      var image = document.createElement('img'); image.src = 'assets/scans/' + file; image.alt = '第 ' + id + ' 首相关专辑内页' + (index > 0 ? '（续页）' : ''); image.loading = 'lazy';
+      link.appendChild(image); pages.appendChild(link);
+    });
+    note.appendChild(label); note.appendChild(pages);
+    var stamp = review.querySelector('.stamp');
+    if (stamp) review.insertBefore(note, stamp); else review.appendChild(note);
+  });
+})();
+</script>
+</body>
+</html>
